@@ -1,0 +1,33 @@
+{
+  "name": "GEM2",
+  "version": "0.0.2",
+  "description": "Get Everybody Moving 2",
+  "main": "gulpfile.js",
+  "private": true,
+  "author": "Audi stache Liew",
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-assets-manifest": "0.0.3",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-filelist": "^1.1.1",
+    "gulp-gm": "0.0.9",
+    "gulp-header": "^2.0.5",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.7",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^6.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

@@ -1,0 +1,214 @@
+/*******
+ * layout.scss
+ *
+ * Containers, page type of styles.
+ * For stuff like tabs, slides etc, consider using components.scss
+ *
+ */
+html {
+	height:100%;
+}
+
+body {
+	height:100%;
+	overflow-y: scroll; // to always have vertical scrollbar
+	background-color:$bgcolour;
+	//background-color:gold;
+	color:$contentTextColour;
+
+//	.js & {
+//
+//		&:before {
+//			content: " ";
+//			background-color:$bgcolour;
+//			position:fixed;
+//			top: 0;
+//			left: 0;
+//			width: 100%;
+//			height: 100%;
+//			z-index: -1;
+//			opacity: 0;
+//			visibility: hidden;
+//			transform: scale(.75);
+//			transition: opacity 1s, transform 2s;
+//		}
+//
+//		&.is-loading {
+//			&:before {
+//				z-index: 3;
+//				opacity: 1;
+//				visibility: visible;
+//				transform: scale(1);
+//			}
+//		}
+//	}
+
+//	.js &.is-loading {
+//		&:after {
+//			content: " ";
+//			position:absolute;
+//			top: 45%;
+//			left: 50%;
+//			z-index: 4;
+//			margin-left: -25px;
+//
+//			transform-origin: 50% 62%;
+//			width: 0px;
+//			height: 0px;
+//			border-left:  17px transparent solid;
+//	    border-right: 17px transparent solid;
+//	    border-bottom:30px $accentColour solid;
+//
+//			animation: uSpinMeRightRound 1s infinite;
+//		}
+//	}
+}
+
+.container {
+	padding-left:$containerSidePadding;
+	padding-right:$containerSidePadding;
+
+	@media screen and (max-width: $menuBecomesSml) {
+		padding-left:$containerSidePaddingSml;
+		padding-right:$containerSidePaddingSml;
+	}
+}
+
+.mainContainer {
+//	margin-left:17.5%;
+	position:relative;
+	z-index:5;
+	padding:0;
+	overflow:hidden;
+	//margin-top: -$menuHeight;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+//	@media screen and (max-width: $menuBecomesSml) {
+//		margin-left: 0;
+//	}
+} // mainContainer
+
+nav {
+	ul {
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+}
+
+.gem-wrapper {
+	backface-visibility:hidden;
+//	.js {
+//		opacity: 0;
+//		visibility: hidden;
+//	}
+}
+
+//.gem-container {
+//	//position: relative;
+//	will-change:transform;
+//}
+
+.contentWrapper {
+	// TEMP padding-top:$menuHeight;
+	padding-top:70px;
+	transition: background-color 1s ease;
+	position:relative;
+
+//	&.about {
+//		background-color:gold;
+//	}
+
+//	h1 {
+//		margin-top: 0;
+//		padding-left: $containerSidePadding;
+//	}
+
+	@media screen and (max-width: $menuBecomesSml) {
+		padding-left:0;
+
+//		h1 {
+//			padding-left: $containerSidePaddingSml;
+//		}
+	}
+} // content-wrapper
+
+.contentArea {
+	padding-left:$containerSidePadding;
+	padding-right:$containerSidePadding;
+//	transition:transform $speedFast $transitionOut, opacity $speedNormal $transitionOut $speedFaster;
+
+//	#{$IsTransitingOut} & {
+//		opacity: 0;
+//		transform: translateY(-20px);
+//	}
+
+	@media screen and (max-width: $menuBecomesSml) {
+		padding-left:$containerSidePaddingSml;
+		padding-right:$containerSidePaddingSml;
+	}
+}
+
+.loading-container {
+	opacity: 0; 
+	visibility: hidden;
+	color:$accentColour;
+	text-align: center;
+	transition:opacity $speedNormal $speedNormal, visibility $speedNormal $speedNormal, transform $speedNormal;
+	pointer-events:none;
+	
+	.js & {
+			background-color: $bgcolour;
+		//	padding: 10px 15px;
+		//	width: 110px;
+		//	position: absolute;
+		//	top: 35%;
+		//	left: 50%;
+		//	margin-left: -50px;
+			//transform-origin: "center";
+			transform:scale(.7);
+
+			width: 100%;
+		  height: 100%;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  margin: 0;
+		  padding-top: 20%;
+	}
+
+	.js .is-loading & {
+//		display: block;
+		transform:scale(1);
+		opacity: 1;
+		z-index: 3;
+		visibility: visible;
+	}
+}
+
+::-webkit-media-controls {
+	@media screen and (min-width: $menuBecomesSml) {
+		//display: none !important;
+	}
+}
+
+//.lazy {
+//	transform:scale(1.1);
+//	filter: blur(15px);
+//	transition:filter $speedNormal;
+//
+//	&.is-inserted {
+//		filter: none;
+//	}
+//}
+
+.mainFooter {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	padding-top: 15px;
+  padding-bottom: 15px;
+}

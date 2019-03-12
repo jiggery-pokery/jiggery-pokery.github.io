@@ -1,0 +1,40 @@
+////////////////////////////////////
+//
+//
+// For Old ie
+@import "partials/variables";
+
+.csIntro {
+	padding-top:80px;
+}
+
+.browserWrap--mobile {
+	display:block;
+	zoom:1;
+	&:before, &:after {
+	    content: "\0020";
+	    display: block;
+	    height: 0;
+	    overflow: hidden;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+.browser--mobile {
+	float:left;
+	margin-right:5%;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@media screen and (max-width: $menuBecomesSml) {
+		float: none;
+		margin-right: auto;
+
+		&:last-child {
+			margin-right: auto;
+		}
+	}
+}

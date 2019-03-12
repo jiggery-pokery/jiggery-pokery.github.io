@@ -1,0 +1,160 @@
+/*******
+ * caseStudy.scss
+ *
+ * For Optrimax
+ *
+ */
+.project--optrimax {
+	h1 {
+		&:after {
+			background-color: $wbOptrimaxPink;
+		}
+	}
+
+	.project__title {
+		&:before,
+	  &:after {
+	    background-color: $wbOptrimaxPink;
+	  }
+	}
+	
+	.csAtmosphere {
+		h2:after {
+			background-color: $wbOptrimaxPink;
+		}
+	}
+
+	.csIntro {
+	  background-image:url(/img/websites/optrimax/intro__bg.jpg);
+	  background-color:$white;
+	  background-position-x: center;
+	}
+
+	.csProfile,
+	.csScreenshots {
+		background-color: $wbOptrimaxBg;		
+	}
+
+	.colourPalette__primary {
+		background-color:$wbOptrimaxPink;
+	}
+	.colourPalette__primary2 {
+		background-color:rgb(237, 54, 149);
+	}
+	.colourPalette__primary3 {
+		background-color:rgb(237, 221, 230);
+	}
+	.colourPalette__primary4 {
+		background-color:rgb(240, 227, 234);
+	}
+	.colourPalette__secondary {
+		background-color:rgb(176, 16, 31);
+	}
+	.colourPalette__secondary2 {
+		background-color:rgb(39, 206, 230);
+	}
+	.colourPalette__secondary3 {
+		background-color:rgb(51, 221, 255);
+	}
+	.colourPalette__neutral {
+		background-color:rgb(159, 158, 156);
+	}
+
+	.csDetails--1 {
+		background-color:$white;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	
+} // websites--optrimax
+
+.csIntro__enzymes {
+	position: absolute;
+	//bottom:0;
+	border-radius: 26%/25%;
+
+	&:nth-child(1) {
+		background-color:$wbOptrimaxPastelYellow;
+	}
+	&:nth-child(2) {
+		background-color:$wbOptrimaxPastelPink;
+	}
+	&:nth-child(3) {
+		background-color:$wbOptrimaxPastelBlue;
+	}
+	&:nth-child(4) {
+		background-color:$wbOptrimaxPastelGreen;
+	}
+}
+
+.csIntro__enzymeswrap--1 {
+	opacity:.15;	
+}
+.csIntro__enzymes1 {
+	width:48px;
+	height:32px;
+	//animation-duration: $speedExtremelySlow, $speedExtremelySlow;
+	//animation-name: fadeIn--slow, slideInDown;
+	//animation-fill-mode:backwards, backwards;
+}
+.csIntro__enzymes1--a {
+	bottom: 47%;
+  left: 50%;
+  transform: rotate(113deg);
+}
+.csIntro__enzymes1--b {
+	top: 43%;
+	left: 39%;
+	transform: rotate(33deg);
+}
+.csIntro__enzymes1--c {
+	top: 22%;
+	right: 38%;
+	transform: rotate(123deg);
+}
+.csIntro__enzymes1--d {
+	top: 14%;
+  left: 38%;
+  transform: rotate(73deg);
+}
+
+.csIntro__enzymeswrap--2 {
+	opacity: .5;
+}
+.csIntro__enzymes2 {
+	width:62px;
+	height:42px;
+}
+.csIntro__enzymes2--a {
+	bottom: 38%;
+  left: 20%;
+  transform: rotate(70deg);
+}
+.csIntro__enzymes2--b {
+	bottom: 47%;
+  right: 17%;
+  transform: rotate(113deg);
+}
+
+.csIntro__enzymeswrap--3 {
+	opacity:.25;
+}
+.csIntro__enzymes3 {
+	width:238px;
+	height:160px;
+}
+.csIntro__enzymes3--a {
+	bottom: -8%;
+  left: 50%;
+  transform: rotate(128deg);
+}
+.csIntro__enzymes3--b {
+	bottom: 21%;
+  left: -110px;
+  transform: rotate(228deg);
+}
+.csIntro__enzymes3--c {
+	top: 40%;
+	right: -110px;
+	transform: rotate(118deg);
+}

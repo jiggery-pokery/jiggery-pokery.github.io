@@ -1,0 +1,184 @@
+/*******
+ * projectList.scss
+ *
+ * For Main category pages
+ * Listing of projects per category, eg. Websites
+ *
+ */
+.projectWrap {
+//  display: flex;
+//  flex-wrap: wrap;
+
+  // Hack to remove the 1px space, works with .project
+  padding-left:1px;
+  
+  @extend .clearfix
+} 
+
+.project {
+  backface-visibility: hidden;
+  overflow: hidden;
+  float: left;
+  position:relative;
+
+  // Maintain aspect ratio when resized
+  width: 50%;
+//  height: 0;
+//  padding-bottom: 27%;
+
+//  Hack to remove the 1px space, works with .projectWrap
+//  margin-top : -1px;
+//  margin-left: -1px;
+
+//  transition: opacity $speedNormal, transform $speedNormal;
+
+//  .is-inserted & {
+//    opacity: 0;
+//    transform: translateY(10px);
+//  }
+
+  animation-duration: $speedNormal, $speedNormal;
+  animation-name: fadeIn--slow, slideInUp--80;
+  animation-fill-mode:backwards, backwards;
+
+  &:nth-child(odd) {
+    clear: left;
+  }
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+//      .is-inserted & {
+//        opacity: 0;
+        animation-delay: 160 + ($speedFast * $i), 140 + ($speedFast * $i);
+//      }
+    }
+  }
+
+  @media screen and (max-width: $project1Column) {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+  }
+} // project
+
+.project__link {
+  display: block;
+}
+
+.project__copywrap {
+  position: absolute;
+  color: $black;
+  width: 100%;
+  top: 45%;
+  text-align: center;
+  z-index: 2;
+
+}
+
+.project__title {
+  display: inline-block;
+  position:relative;
+  font-size: 1.9rem;
+//  opacity: 0;
+  transition: opacity $speedSlow $transitionNormal, transform $speedFast ease-out;
+  //transition: opacity $speedSlow $transitionNormal;
+  transition-delay: $speedSlow, none; // For hover out
+
+
+  &:before {
+    //width: 16px;
+    //left: 50%;
+    //margin-left: -8px;
+    content: " ";
+    position: absolute;
+    height: 3px;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    z-index: 3;
+    transform: scaleX(0);
+    transition: transform $speedNormal ease-out;
+    //opacity: .5;
+  }
+
+  .project__link:hover & {
+    transform: scale(1.1);
+
+    &:before {
+     //opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  #{$IsTransitingOut} &,
+  #{$IsTransitingOut}:hover &,
+   {
+    transform: scale(1.1);
+    &:before {
+      //transform-origin: left;
+      //transform: scaleY(2);
+      animation-name: knightRiderScale;
+      animation-duration: 1.5s; /* or: Xms */
+      animation-iteration-count: infinite;
+      //animation-direction: alternate; /* or: normal */
+      animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+      //animation-fill-mode: both; /* or: backwards, both, none */
+      //animation-delay: 2s; /* or: Xms */
+    }
+  }
+
+
+//  .project:hover & {
+//    transition-delay: $speedFast; // For hover in
+//    opacity: 1;
+//  }
+
+//  @media screen and (max-width: $project1Column) {
+//    opacity: 1;
+//  }  
+} // project__title
+
+.project__preview {
+  //opacity: 0;
+  position:relative;
+  z-index: 1;
+  //backface-visibility: 0;
+  transform: scale(1.05); // Fix the 1 pixel gap
+  backface-visibility: hidden;
+  transition: transform $speedSlow $transitionNormal;
+  //transition-delay: $speedVerySlow;
+
+  img {
+    display: block;
+    backface-visibility: hidden;
+    transition: transform $speedFast ease-out;
+
+    #{$IsTrident} & {
+      transition: none;
+    }
+
+    //display: none;
+    //position:absolute;
+  }
+
+//  .project:hover & {
+//    transform:scale(1.15);
+//  }
+
+//  @media screen and (max-width: $project1Column) {
+//    .project:hover & {
+//      transform:none;
+//    }
+//  }
+} // project__preview
+
+.project__fgimg {
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+//.project__bgimg {
+//  transition: transform $speedFast ease-out;
+//}

@@ -1,0 +1,11 @@
+/*******
+ * helpers.scss
+ *
+ * Probably non-semantic styles, eg. .regularClear.
+ *
+ */
+ 	.is-initially-hidden {
+		//display: none;
+		visibility: hidden;
+		opacity: 0;
+	}

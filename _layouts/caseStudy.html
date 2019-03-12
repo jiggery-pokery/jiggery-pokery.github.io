@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{{ content }}
+<div class="pageNavigation">
+  {% if page.next.url %}
+    <a class="pageNavigation__links pageNavigation__next" href="{{page.next.url}}" title="{{page.next.title}}"><span class="pageNavigation__projName">{{page.next.title}}</span> <span class="pageNavigation__icon pageNavigation__icon--prev"></span></a>
+  {% endif %}
+  {% if page.collection %}
+  <a href="/" class="pageNavigation__links pageNavigation__collections{% if page.previous.url == null %} is-last-project{% endif %}" title="View all"><span class="pageNavigation__icon pageNavigation__icon--all"></span></a>
+  {% endif %}
+  {% if page.previous.url %}
+    <a class="pageNavigation__links pageNavigation__prev" href="{{page.previous.url}}" title="{{page.previous.title}}"><span class="pageNavigation__icon pageNavigation__icon--next"></span> <span class="pageNavigation__projName">{{page.previous.title}}</span></a>
+  {% endif %}
+</div>

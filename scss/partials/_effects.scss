@@ -1,0 +1,37 @@
+/*******
+ * effects.scss
+ *
+ * For animations, transitions etc
+ *
+ */
+.loading {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.3em;
+  margin-top: -0.3em;
+  line-height: 1.5em;
+  vertical-align: text-bottom;
+
+  &::after {
+    display: inline-table;
+    white-space: pre;
+    text-align: left;
+  }
+
+  &.dots2::after {
+    content: "⠋\A⠙\A⠚\A⠞\A⠖\A⠦\A⠴\A⠲\A⠳";
+    animation: spin9 1s steps(9) infinite;
+  }
+}
+
+@keyframes spin9  { to { transform: translateY(-13.5em); } }
+
+@keyframes uSpinMeRightRound {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}

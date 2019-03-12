@@ -1,0 +1,47 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  {% if page.noindex %}
+  <meta name="robots" content="noindex" />
+  {% endif %}
+  <meta content="{{ site.title }}" property="og:site_name">
+  {% if page.title %}
+  <meta content="{{ page.title }}" property="og:title">
+  {% else %}
+  <meta content="{{ site.title }}" property="og:title">
+  {% endif %}
+  {% if page.title %}
+  <meta content="article" property="og:type">
+  {% else %}
+  <meta content="website" property="og:type">
+  {% endif %}
+  {% if page.description %}
+  <meta content="{{ page.description }}" property="og:description">
+  <meta name="description" content="{{ page.description }}"/>
+  {% endif %}
+  {% if page.url %}
+  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+  {% endif %}
+  {% comment %}
+  {% if page.date %}
+  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+  <meta content="{{ site.url }}/about/" property="article:author">
+  {% endif %}
+  <meta content="{{ site.url }}/img/logo.jpg" property="og:image">
+  {% endcomment %}
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }} {% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="/css/main.min.css"/>
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
+  <!--[if lte IE 9]>
+  <script src="{{ site.url }}/js/old-ie/html5shiv.3.7.3.min.js"></script>
+  <link rel="stylesheet" href="/css/oldie.min.css"/>
+  <![endif]-->
+  <!--[if lte IE 8]>
+  <script src="{{ site.url }}/js/old-ie/object.create.js"></script>
+  <script src="{{ site.url }}/js/old-ie/eventListener.polyfill.js"></script>
+  <![endif]-->
+<script>document.documentElement.className="js"</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create', 'UA-11336967-1', 'auto');</script>
+</head>

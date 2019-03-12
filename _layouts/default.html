@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html class="no-js" lang="{{ site.lang | default: page.lang | default: 'en' }}">
+{% include head.html %}
+{% comment %}<body{% if page.url == "/" %} class="is-loading"{% endif %}>{% endcomment %}
+<body>
+{% include header.html %}
+<div class="container mainContainer">
+  <div id="gem-wrapper" class="main gem-wrapper" aria-label="Content">
+    <div class="gem-container"{% if page.namespace %} data-namespace="{{page.namespace}}"{% endif %}{% if page.pageIsLight %} data-pageIsLight="{{page.pageIsLight}}"{% endif %}>
+	    <article class="contentWrapper{% if page.contentWrapperClass %} {{page.contentWrapperClass}}{% endif %}" role="main">
+	    {{ content }}
+	    </article>
+    </div>
+  </div>
+</div><!-- // container -->
+{% comment if page.url == "/" %}
+<div class="loading-container">Loading <span class="percentage"></span><span class="loading dots2"></span></div>
+{% endcomment endif %}
+<footer class="mainFooter container">
+	<p class="copyright-notice">Copyright &copy; {{ 'now' | date: "%Y" }} Audi Liew</p>
+</footer>
+{% include footer_scripts.html %}
+</body>
+</html>

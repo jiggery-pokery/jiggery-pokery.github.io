@@ -1,0 +1,65 @@
+/*******
+ * caseStudy.scss
+ *
+ * For Enterprise 50
+ *
+ */
+.project--enterprise50 {
+	h1 {
+		//font-family: "Playfair Display",Georgia,Times;
+		color: $white;
+		&:after {
+			background-color: $wbEnterprise50Gold;
+		}
+	}
+	
+	.project__title {
+		color: $white;
+		
+	  &:before,
+	  &:after {
+	    background-color: $wbEnterprise50Gold;
+	  }
+	}
+
+	.csAtmosphere {
+		h2:after {
+			background-color: $wbEnterprise50Gold;
+		}
+	}
+
+	.csIntro {
+		color: $white;
+	  background-image:url(/img/websites/enterprise50/intro__bg.jpg);
+	  background-color:rgb(23, 38, 97);
+	}
+
+		.csIntro__imgwrap {
+			position: absolute;
+	    //bottom: -10px;
+	    //left: -90px;
+	    height: 100vh;
+	    top: 0;
+	    right: -13%;
+
+	    animation-duration: $speedExtremelySlow, $speedExtremelySlow;
+			animation-name: slideInRight, fadeIn--slow;
+			animation-fill-mode:backwards, backwards;
+			animation-delay:50 + ($speedFast * 2);
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+	.csProfile,
+	.csScreenshots {
+		background-color: $wbEnterprise50Blue;		
+	}
+
+	.colourPalette__primary {
+		background-color:$wbEnterprise50Blue;
+	}
+	
+} // websites--aurigen
