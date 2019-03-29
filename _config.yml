@@ -42,12 +42,7 @@ keep_files:
   - js
   - vid
 exclude:
-  - js/_ARCHIVE/
-  - js/app/
-  - js/plugins/
-  - img_source
-  - scss
-  - css/normalize.css
+  - _assets_src
   - Gemfile
   - Gemfile.lock
   - package.json
