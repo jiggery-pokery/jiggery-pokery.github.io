@@ -126,11 +126,11 @@ function jsapp() {
               loader: 'babel-loader',
               options: {
                 presets: [['@babel/preset-env', {
-                  "useBuiltIns": "entry",
-                  //"useBuiltIns": "usage",
-                  "corejs": 3,
-                  //"modules": "umd",
                   "debug":true,
+                  //"useBuiltIns": "entry",
+                  "useBuiltIns": "usage",
+                  //"corejs": 3,
+                  //"modules": "umd",
                 }]]
               }
             }
@@ -206,9 +206,9 @@ function images() {
 // HTML & Markdown
 // Using Jekyll to process
 
-function jekyll() {
-  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
-  //return cp.spawn('jekyll.bat', ['build', '--future'], {stdio: 'inherit'})
+function jekyll(done) {
+  // https://stackoverflow.com/questions/37459717/error-spawn-enoent-on-windows#answer-54515183
+  return cp.spawn("bundle", ["exec", "jekyll", "build"], { stdio: 'inherit', shell: process.platform == 'win32' }).on('close', done);
 }
 
 
