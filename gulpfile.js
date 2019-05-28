@@ -77,9 +77,12 @@ const path =
     vid:          folder.assetsrc + 'vid/**/*',
     html:         [
       folder.src + '*.html',
-      folder.src + '**/*.html',
+      folder.src + '_includes/*.html',
+      folder.src + '_layouts/*.html',
       folder.src + '*.md',
-      folder.src + '**/*.md',
+      folder.src + '_includes/*.md',
+      folder.src + '_layouts/*.md',
+      folder.src + '_works/*.md',
       folder.src + '!NOTES.md',
     ]
   },
@@ -217,7 +220,7 @@ function jekyll(done) {
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: "./build/"
+      baseDir: "./__build/"
     },
     port: 3000
   });
