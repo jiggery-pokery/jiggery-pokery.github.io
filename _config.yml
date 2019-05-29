@@ -41,11 +41,13 @@ keep_files:
   - img_source
   - js
   - vid
+
 exclude:
   - _assets_src
   - Gemfile
   - Gemfile.lock
   - package.json
+  - package-lock.json
   - README.md
   - NOTES.md
   - CNAME
