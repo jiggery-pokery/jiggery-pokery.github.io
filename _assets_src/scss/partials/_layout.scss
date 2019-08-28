@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mainHeader {
+  width: $sidebarWidth;
+  background-color: aliceblue;
+  position: fixed;
+  height: 100%;
+
+  @include respond-below(sm) {
+    //background-color: gold;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.mainContent {
+  margin-left: $sidebarWidth;
+  padding: 25px 40px;
+
+  @include respond-below(sm) {
+    margin-left: 0;
+    padding-top: 50px;
+  }
+}

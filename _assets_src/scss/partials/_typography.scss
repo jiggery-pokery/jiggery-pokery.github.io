@@ -1,0 +1,6 @@
+body {
+  font-family: map-get($map: $font, $key: family);
+  font-size: map-get($map: $font, $key: size);
+  line-height: map-get($map: $font, $key: lineHeight);
+  color: gray('800');
+}

@@ -4,9 +4,11 @@
 //
 // Overall Layouts & Typography
 // 
-//@import "partials/variables";
-//@import "partials/typography";
-//@import "partials/layout";
+@import "partials/functions";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/typography";
+@import "partials/layout";
 //@import "partials/header"; 
 //@import "partials/footer"; 
 //@import "partials/components";
