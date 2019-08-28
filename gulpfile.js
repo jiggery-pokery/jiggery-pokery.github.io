@@ -65,7 +65,11 @@ const path =
     assetspath:   folder.assetsrc,
     scss: {
       main:       folder.assetsrc + 'scss/*.scss',
-      all:        folder.assetsrc + 'scss/**/*.scss',
+      all:        [
+        folder.assetsrc + 'scss/**/*.scss',
+        folder.assetsrc + 'scss/!_archive/*.scss',
+        '!_assets_src/scss/_archive/**/*'
+      ]
     },
     img:          [
                     folder.assetsrc + 'img/**/*'
