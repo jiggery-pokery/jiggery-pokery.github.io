@@ -9,8 +9,8 @@
 <body>
 {% include header.html %}
 <div class="container mainContainer">
-  <div id="gem-wrapper" class="main gem-wrapper" aria-label="Content">
-    <div class="gem-container"{% if page.namespace %} data-namespace="{{page.namespace}}"{% endif %}{% if page.pageIsLight %} data-pageIsLight="{{page.pageIsLight}}"{% endif %}>
+  <div id="gem-wrapper" data-bb="wrapper" class="main gem-wrapper" aria-label="Content">
+    <div data-bb="container" class="gem-container"{% if page.namespace %} data-namespace="{{page.namespace}}"{% endif %}{% if page.pageIsLight %} data-pageIsLight="{{page.pageIsLight}}"{% endif %}>
 	    <article class="contentWrapper{% if page.contentWrapperClass %} {{page.contentWrapperClass}}{% endif %}" role="main">
 	    {{ content }}
 	    </article>
