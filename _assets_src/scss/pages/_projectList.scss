@@ -112,8 +112,7 @@
   }
 
   #{$IsTransitingOut} &,
-  #{$IsTransitingOut}:hover &,
-   {
+  #{$IsTransitingOut}:hover & {
     transform: scale(1.1);
     &:before {
       //transform-origin: left;
