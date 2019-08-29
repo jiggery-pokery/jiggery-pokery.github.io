@@ -1,0 +1,67 @@
+/*******
+ * caseStudy.scss
+ *
+ * For CNY 2015
+ *
+ */
+$CNY2015Gray		: #333;
+
+.project--cny2015 {
+	h1 {
+		color: $white;
+
+		&:after {
+			background-color: $CNY2015Gray;
+		}
+	} 
+	
+	.project__title {
+		color: $white;
+		
+		&:before,
+	  &:after {
+	    background-color: $CNY2015Gray;
+	  }
+	}
+
+	.csAtmosphere {
+		h2:after {
+			background-color: $CNY2015Gray;
+		}
+	}
+
+	.csIntro {
+		color: $white;
+	  background-image:url(/img/ecards/cny2015/intro__bg.jpg);
+	  background-color:rgb(149, 19, 31);
+	}
+
+		.csIntro__imgwrap {
+			position: absolute;
+	    //bottom: -10px;
+	    //left: -90px;
+	    height: 100vh;
+	    top: 0;
+	    right: -13%;
+
+	    animation-duration: $speedExtremelySlow, $speedExtremelySlow;
+			animation-name: slideInRight, fadeIn--slow;
+			animation-fill-mode:backwards, backwards;
+			animation-delay:50 + ($speedFast * 2);
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+	.csProfile,
+	.csScreenshots {
+		background-color: $CNY2015Gray;		
+	}
+
+	.colourPalette__primary {
+		background-color:$CNY2015Gray; 
+	}
+	
+} // websites--axiom

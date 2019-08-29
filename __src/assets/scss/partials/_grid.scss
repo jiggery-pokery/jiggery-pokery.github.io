@@ -1,0 +1,135 @@
+/*******
+ * grid.scss
+ *
+ * From http://gridpak.com/
+ *
+ */
+
+@mixin col {
+  border:0px solid rgba(0,0,0,0);
+  float:left;
+  -moz-background-clip:padding-box !important;
+  -webkit-background-clip:padding-box !important;
+  background-clip:padding-box !important;
+}
+
+.col {
+  @include col;
+  margin-left:3%;
+  padding:0 0%;
+}
+
+@mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
+  $one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+  width:($one_col * $num) + ($gutter_pc * ($num - 1));
+  border-left-width:$gutter_px;
+  padding:$padding;
+  //margin-left:$gutter_pc;
+}
+
+@mixin span_first {
+    margin-left:0;
+}
+
+// --- Gridpak variables ---
+$max_columns: 6;
+$padding: 0 2% 0 0;
+$gutter_px: 0;
+$gutter_pc: 4%;
+
+
+.row {
+  @extend .clearfix;
+}
+
+.row .col:first-child {
+  @include span_first;
+}
+
+.span_4 {
+  @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
+}
+
+.span_6 {
+  @include span_first;
+  @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
+}
+
+
+
+@media only screen and (min-width: 580px) {
+
+// --- Gridpak variables ---
+$max_columns: 12;
+$padding: 0 2% 0 0;
+$gutter_px: 0;
+$gutter_pc: 4%;
+
+.col {
+  margin-left:2%;
+  padding:$padding;
+
+  .no-boxsizing & {
+    padding:0;
+  }
+}
+
+.span_6 {
+  @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
+}
+
+.span_12 {
+  @include span_first;
+  @include span(12, $gutter_pc, $gutter_px, $padding, $max_columns);
+}
+
+} // @media 580
+
+@media only screen and (min-width: 768px) {
+// --- Gridpak variables ---
+$max_columns: 12;
+$padding: 0 2% 0 0;
+$gutter_px: 0;
+$gutter_pc: 4%;
+
+.col {
+  margin-left:2%;
+  padding:$padding;
+
+  .no-boxsizing & {
+    padding:0;
+  }
+}
+
+.span_8 {
+  @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);
+}
+
+.span_12 {
+  @include span_first;
+  @include span(12, $gutter_pc, $gutter_px, $padding, $max_columns);
+}
+
+} // @media 768
+
+@media only screen and (min-width: 1050px) {
+  // --- Gridpak variables ---
+  $max_columns: 12;
+  $padding: 0 2% 0 0;
+  $gutter_px: 0;
+  $gutter_pc: 4%;
+
+  .col {
+    margin-left:2%;
+    padding:$padding;
+
+    .no-boxsizing & {
+      padding:0;
+    }
+  }
+
+  .span_6 {
+    @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+
+} // @media 1050

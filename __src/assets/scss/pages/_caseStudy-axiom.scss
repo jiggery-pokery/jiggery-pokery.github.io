@@ -1,0 +1,61 @@
+/*******
+ * caseStudy.scss
+ *
+ * For Axiom
+ *
+ */
+$AxiomBlue		: #30618e;
+
+.project--axiom {
+	h1 {
+		&:after {
+			background-color: $AxiomBlue;
+		}
+	} 
+	
+	.project__title {
+		&:before,
+	  &:after {
+	    background-color: $AxiomBlue;
+	  }
+	}
+
+	.csAtmosphere {
+		h2:after {
+			background-color: $AxiomBlue;
+		}
+	}
+
+	.csIntro {
+	  background-image:url(/img/websites/axiom/intro__bg.jpg);
+	  background-color:$white;
+	}
+
+		.csIntro__imgwrap {
+			position: absolute;
+	    //bottom: -10px;
+	    //left: -90px;
+	    height: 100vh;
+	    top: 0;
+	    right: -13%;
+
+	    animation-duration: $speedExtremelySlow, $speedExtremelySlow;
+			animation-name: slideInRight, fadeIn--slow;
+			animation-fill-mode:backwards, backwards;
+			animation-delay:50 + ($speedFast * 2);
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+	.csScreenshots {
+		background-color: $AxiomBlue;		
+	}
+
+	.colourPalette__primary {
+		background-color:$AxiomBlue; 
+	}
+	
+} // websites--axiom

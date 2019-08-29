@@ -1,0 +1,68 @@
+/*******
+ * caseStudy.scss
+ *
+ * For Xmas 2014
+ *
+ */
+$Xmas2014Brown		: #dcb16c;
+$Xmas2014Gray			: #333;
+
+.project--xmas2014 {
+	h1 {
+		color: $white;
+
+		&:after {
+			background-color: $Xmas2014Brown;
+		}
+	} 
+	
+	.project__title {
+		color: $white;
+
+		&:before,
+	  &:after {
+	    background-color: $Xmas2014Brown;
+	  }
+	}
+
+	.csAtmosphere {
+		h2:after {
+			background-color: $Xmas2014Brown;
+		}
+	}
+
+	.csIntro {
+		color: $white;
+	  background-image:url(/img/ecards/xmas2014/intro__bg.jpg);
+	  background-color:rgb(2, 26, 50);
+	}
+
+		.csIntro__imgwrap {
+			position: absolute;
+	    //bottom: -10px;
+	    //left: -90px;
+	    height: 100vh;
+	    top: 0;
+	    right: -13%;
+
+	    animation-duration: $speedExtremelySlow, $speedExtremelySlow;
+			animation-name: slideInRight, fadeIn--slow;
+			animation-fill-mode:backwards, backwards;
+			animation-delay:50 + ($speedFast * 2);
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+	.csProfile,
+	.csScreenshots {
+		background-color: $Xmas2014Gray;		
+	}
+
+	.colourPalette__primary {
+		background-color:$Xmas2014Brown; 
+	}
+	
+} // websites--axiom

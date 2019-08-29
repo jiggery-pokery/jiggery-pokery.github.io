@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/*******
+ * typography.scss
+ *
+ * Typography styles.
+ *
+ */
+body {
+//	font-family: 'Merriweather Sans', sans-serif;
+	
+	font-family: 'Ubuntu', sans-serif;
+	line-height: 1.6em;
+	font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 {
+// 	font-family: 'Merriweather', serif;
+	font-family: 'Julius Sans One', sans-serif;
+// 	font-weight: 400;
+// 	letter-spacing: 0.04em;
+}
+
+a {
+ 	text-decoration: none;
+ 	color: $contentTextColour;
+}
+
+.laptop {
+	margin:$containerSidePadding/2 0 $containerSidePadding;
+	border: 3px solid rgb(232, 235, 240);
+	border-radius: 10px 10px 0 0;
+	position: relative;
+	background: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(35,35,35) 100%);
+	padding: 33px;
+
+	img {
+		display: block;
+	}
+
+	&:before {
+		content: " ";
+		position: absolute;
+		width: 10%;
+		height: 5px;
+		bottom: -5px;
+		z-index: 2;
+		left: 50%;
+		margin-left: -5%;
+		border-radius: 0 0 5px 5px;
+		background-color:rgb(216, 219, 225);
+	}
+
+	&:after {
+		content: " ";
+		position: absolute;
+		bottom:-21px;
+		border-radius: 0 0 20px 20px;
+		background: rgb(244, 245, 247);
+		height: 20px;
+		width: 108%;
+		margin-left: -8%;
+	}
+}
+
+.type_light {
+	font-weight:300;
+}
+
+.type_opensans {
+	font-family:"Open Sans";
+	font-weight:400;
+}
+
+.type_opensans--300 {
+	font-weight:300;
+}
+
+.type_handlee {
+	font-family:"Handlee";
+}
+
+.type_playfair {
+	font-family:"Playfair Display";
+}
+
+.type_merriweather {
+	font-family:"Merriweather";
+}
+
+.type_roboto {
+	font-family:"Roboto";
+}

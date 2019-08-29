@@ -1,0 +1,8 @@
+// Retrieve color Sass maps
+@function color($key: "blue") {
+  @return map-get($colors, $key);
+}
+
+@function gray($key: "100") {
+  @return map-get($grays, $key);
+}

@@ -1,0 +1,369 @@
+/*******
+ * header.scss
+ *
+ * For stuff in the main header of the site.
+ * Place navigation styles into header__mainnav.scss
+ *
+ */
+$mainNavMarginLeft				: 15px;
+
+.mainHeader {
+
+	position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
+
+	//position:relative;
+	//z-index:2;
+	padding: 10px $containerSidePadding;
+ 	font-size: 0.9em;
+ 	line-height: 1.5em;
+ 	//animation-name: slideInDown;
+ 	//animation-duration:$speedExtremelySlow;
+// 	transition: transform $speedNormal linear;
+
+ 	@media screen and (max-width: $menuBecomesSml) {
+ 		//position:fixed;
+ 		top: 0;
+ 		left: 0;
+ 		width: 100%;
+ 		height: auto;
+ 		padding-left:$containerSidePaddingSml;
+ 		padding-right:$containerSidePaddingSml;
+ 	}
+} // mainHeader
+
+.headroom {
+  //will-change: transform;
+  //transform: translateZ(0);
+  transition: transform $speedNormal linear, background-color $speedNormal;
+}
+
+.headroom--pinned {
+	background-color:rgba($black,.9);
+  transform: translateY(0%);
+
+  &.mainHeader--light {
+		background-color:rgba($white,.9);
+  }
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+.headroom--top {
+	background-color:transparent;
+
+	&.mainHeader--light {
+		background-color:transparent;
+	}
+}
+/*******
+ * header__mainnav.scss
+ *
+ * Styles for the main navigation of site.
+ *
+ */
+.mainNav {
+	display: flex;
+  //justify-content: center;
+	//align-items:center;
+
+//	a {
+//		color: $mainNavLinkColour;
+//		transition: color $speedFast;
+//	}
+
+ 	@media screen and (max-width: $menuBecomesSml) {
+ 		display: block;
+ 	}
+} // mainNav
+
+.mainNav__logoAnchor {
+	.mainHeader--isHomepage & {
+		cursor: default;
+	}
+}
+
+.mainNav__logo {
+	margin-bottom: 0;
+	//flex:1;
+	display:block;
+	text-decoration:none;
+/*
+	&:hover,
+	.mainHeader--light &:hover {
+		path {
+			fill:$aqua;
+		}
+	}
+
+	path {
+		transition: fill $speedNormal;
+		fill:$white;
+
+		.mainHeader--light & {
+			fill: rgba($aqua,.4);
+		}
+	}
+*/
+	@media screen and (max-width: $menuBecomesSml) {
+		display: inline-block;
+	}
+}
+
+.mainNav__logoparts {
+	transition: fill $speedNormal, transform $speedNormal ease-out;
+  transform-origin: center;
+	fill:$logoColour;
+	height: 40px;
+	position:relative;
+
+	.mainHeader--isHomepage & {
+		fill:$logoColour;
+	}
+	//.mainHeader--light .mainNav__logo:hover &,
+	//.mainNav__logo:hover & {
+	//	fill:$logoHoverColour;
+	//}
+
+	//.mainHeader--light & {
+	//	fill:$logoDarkColour;
+	//}
+}
+
+.mainNav__logoparts--A {
+  width: 34px;
+  z-index: 5;
+	transition-delay:200ms;
+
+	//transform:rotate(-90deg);
+	//transform:scaleX(0.6) scaleY(0.4) translateY(-17px);
+	transform:rotate(-90deg) translateY(-3px) translateX(-15px);
+
+	.mainHeader--isHomepage & {
+		transform: rotate(0);
+		transition-delay:0;
+	}
+}
+
+//.mainNav__logoparts--U,
+//.mainNav__logoparts--I
+//.mainNav__logoparts--D
+// {
+//	transform: scale(0);
+//  transform: translateX(-57px) scale(1.3);
+//  z-index: 1;
+//
+//	.mainHeader--light & {
+//		fill: $logoDarkColour;
+//	}
+//
+//	.mainHeader--isHomepage & {
+//		transform: scale(1);
+//	}
+//}
+
+.mainNav__logoparts--U {
+	z-index: 5;
+  width: 20px;
+	transition-delay:150ms;
+	//transform: scaleX(0.6) scaleY(0.4) translateX(-50px) translateY(-3px);
+	transform: scaleX(0) scaleY(0);
+	.mainHeader--isHomepage & {
+		transform: none;
+		transition-delay:0;
+	}
+}
+.mainNav__logoparts--D {
+	z-index: 1;
+	width: 27px;
+	transform: translateX(-52px) translateY(24px) scale(3);
+	transition-delay:100ms;
+	fill: $logoDarkColour;
+
+	.mainHeader--isHomepage & {
+		fill:$logoColour;
+		transform: none;
+		transition-delay:200ms;
+	}
+
+	a:hover & {
+		fill:darken($logoDarkColour,20);
+
+		.mainHeader--isHomepage & {
+			fill:$logoColour;
+		}
+	}
+}
+.mainNav__logoparts--I {
+	z-index: 5;
+	width: 7px;
+	transition-delay:100ms;
+	//transform: scaleX(.5) scaleY(0.3) translateX(-150px) translateY(-1px);
+	transform: translateX(-55px) translateY(14px) rotate(90deg);
+	//fill:$logoHoverColour;
+
+	.mainHeader--isHomepage & {
+		fill:$logoColour;
+		transform: none;
+		transition-delay:0;
+	}
+}
+
+.mainNav__navbar {
+	display: flex;
+
+	li {
+		margin-left:$mainNavMarginLeft;
+	}
+
+ 	a {
+ 		display: block;
+ 		color: $mainNavLinkColour;
+ 		padding-top 	: 5px;
+ 		padding-bottom: 5px;
+ 		text-decoration: none;
+
+		&.is-active {
+			color: $mainNavActiveLinkColour;
+
+			.mainHeader--light & {
+				color: $black;
+			}
+		}
+
+ 		&:hover {
+ 			color: $mainNavHoverLinkColour;
+
+ 			.mainHeader--light & {
+ 				color: $darkGray;
+ 				//color: red;
+ 			}
+ 		}
+ 	}
+
+// 	.is-active {
+// 		//text-decoration: underline;
+// 		//cursor: default;
+// 		color: $mainNavActiveLinkColour;
+//
+// 		.mainHeader--light & {
+// 			color: $black;
+//
+// 			&:hover {
+// 				color: red;
+// 			}
+// 		}
+
+// 		&:hover {
+// 			color: $mainNavActiveLinkColour;
+// 		}
+// 	}
+
+//	@media screen and (min-width: $menuBecomesSml) {
+//
+//	}
+
+	@media screen and (max-width: $menuBecomesSml) {
+//		will-change: transform;
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 50px 30px 30px;
+		background-color:$darkGray;
+		height: 100%;
+		width: 70%;
+		z-index: 2;
+		transition: transform $speedNormal;
+    transform: translateX(105%);
+
+//    &:before {
+//    	content: " ";
+//    	position:absolute;
+//    	width: 100%;
+//    	height: 100%;
+//    	top: 0;
+//    	left: -20%;
+//    	z-index: -1;
+//    	background-color:red;
+//    }
+
+    li {
+    	margin-left: 0;
+    	transform: translateX(50px);
+    	opacity: 0;
+    	transition: transform $speedNormal, opacity $speedNormal;
+
+    	@for $i from 1 through 5 {
+    		&:nth-child(#{$i}) {
+    			transition-delay: 50 + (40ms * $i);	
+    		}
+    	}
+    }
+
+    &.is-active {
+    	transform: translateX(0);
+
+    	li {
+    		transform: translateX(0);
+    		opacity: 1;
+    	}
+    }
+
+    a {
+    	padding:15px 0;
+
+    	&.is-active {
+
+    		.mainHeader--light & {
+    			color: $mainNavActiveLinkColour;
+    		}
+    	}
+
+    	&:hover {
+    		color: $mainNavHoverLinkColour;
+
+    		.mainHeader--light & {
+    			color: $mainNavHoverLinkColour;
+    			//color: gold;
+    		}
+    	}
+    }
+
+	}
+} // mainNav__navbar
+
+.mainNav__burger {
+	display:none;
+
+//	@media screen and (max-width: $menuBecomesSml) {
+//		display: block;
+//		position: absolute;
+//    z-index: 10;
+//    top: 7px;
+//    right: 7px;
+//    width: 40px;
+//    height: 40px;
+//	}
+}
+
+.mainNav__hire {
+//	position: absolute;
+	bottom: 15px;
+	font-size:.9em;
+	margin-left: $mainNavMarginLeft;
+//	a {
+//		color:$accentColourLight;		
+//	}
+
+//	@media screen and (max-width: $menuBecomesSml) {
+//		position: static;
+//		margin-left: $mainNavMarginLeft;
+//	}
+}

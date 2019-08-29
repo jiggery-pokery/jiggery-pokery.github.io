@@ -1,0 +1,105 @@
+/*******
+ * variables.scss
+ *
+ * A keeper of values
+ *
+ */
+// Colour me 
+$black											: rgb(0,0,0);
+$darkGray										: rgb(29, 31, 33);
+$offMidGray									: rgb(23, 23, 23);
+$midGray										: rgb(43, 43, 43);
+$lightGray									: rgb(98, 98, 98);
+$white											: rgb(255,255,255);
+//$offWhite										: rgb(204, 204, 204);
+$offWhite										: rgb(142, 142, 142);
+$offWhiteLight							: rgb(180, 180, 180);;
+$offWhiteDark								: rgb(216, 216, 216);
+
+$aqua												: rgb(39, 206, 230);
+$gold												: gold;
+$skyBlue										: rgb(135,206,235);
+
+$purple900									: #4A148C;
+$purple800									: #6A1B9A;
+$cyanA400										: #00E5FF;
+$cyanA200										: #18FFFF;
+
+$bgcolour										: $darkGray;
+$contentTextColour					: $white;
+$secondaryTextColour				: $lightGray;
+
+$primaryColour							: lighten($skyBlue,5);
+$primaryColourDark					: darken($skyBlue,10);
+$primaryColourLight					: $purple800;
+$accentColour								: $cyanA400;
+$accentColourLight					: $cyanA200;
+
+$logoColour									: $white;
+$logoHoverColour						: lighten($skyBlue,5);
+$logoDarkColour							: darken($skyBlue,10);
+
+$mainNavBgColour						: $black;
+$mainNavLinkColour					: $black;
+$mainNavActiveLinkColour		: $white;
+$mainNavHoverLinkColour			: $offWhiteDark;
+
+$wbBestWorldBlue						: rgb(10, 109, 171); // rgb(24, 40, 51); //rgb(19, 53, 78);
+$wbBestWorldDarkBlue				: rgb(24, 40, 51); // rgb(24, 40, 51); //rgb(19, 53, 78);
+$wbBestWorldBg							: $wbBestWorldDarkBlue; //rgb(19, 53, 78);
+
+$wbOptrimaxPink							: rgb(180, 40, 109);
+$wbOptrimaxBg								: rgb(44, 2, 37);
+$wbOptrimaxPastelPink				: rgb(244,154,193);
+$wbOptrimaxPastelBlue				: rgb(109,207,246);
+$wbOptrimaxPastelYellow			: rgb(255,247,153);
+$wbOptrimaxPastelGreen			: rgb(163,211,156);
+
+$wbMondellaPink 						: rgb(159, 31, 99);
+
+$wbDrssecretBlue 						: rgb(32, 189, 249);
+$wbDrssecretGray 						: rgb(93, 93, 93);
+
+$wbAurigenYellow						: rgb(247,235,116);
+$wbAurigenBrown							: rgb(56,37,28);
+
+$wbEnterprise50Gold					: rgb(205, 205, 124);
+$wbEnterprise50Blue					: rgb(9, 0, 60);
+// A Matter of time
+$speedFaster								: 75ms;
+$speedFast									: 125ms;
+$speedNormal								: 250ms;
+$speedSlow									: 350ms;
+$speedVerySlow							: 500ms;
+$speedExtremelySlow					: 800ms;
+
+// Status, tied with JS
+$IsInitiallyHidden 					: ".is-initially-hidden";
+$IsHidden          					: ".is-hidden";
+$IsActive          					: ".is-active"; 
+$IsVisible         					: ".is-visible";
+$IsInserted        					: ".is-inserted";
+$IsLoading									: ".is-loading";
+$IsTransitingOut   					: ".is-transiting-out";
+$IsTrident									: ".is-trident";
+
+// Transition type
+$transitionNormal						: ease-in-out;
+$transitionOut							: ease-in;
+$transitionDistance 				: 10px;
+
+// Size does not matter
+$tooLowForHero							: 430px;
+$menuBecomesSml							: 650px;
+$menuSize										: 17.5%;
+$containerSidePadding				: 8%;// 45px;
+$containerSidePaddingSml		: 25px;
+$containerTopPadding				: 55px;
+$containerTopPaddingSml			: 25px;
+$menuHeight									: 52px;
+
+$browserMargin							: 30px;
+$browserMarginSml						: 20px;
+
+// Project
+$project1Column							: 610px;
