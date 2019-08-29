@@ -1,13 +1,72 @@
 extends ./layouts/master.pug
+block variables
+  - var isHomepage = true
+  - var namespace = 'projectList'
+  - 
+    sites = [
+      {
+        "pageName": "bestworld",
+        "title": "Best World"
+      },
+      {
+        "pageName": "drssecret",
+        "title": "DR’s Secret"
+      },
+      {
+        "pageName": "mondella",
+        "title": "Mondella Contours"
+      },
+      {
+        "pageName": "Optrimax",
+        "title": "Optrimax"
+      },
+      {
+        "pageName": "cny",
+        "title": "Chinese New Year ecard",
+        "pageType": "ecard"
+      },
+      {
+        "pageName": "aurigen",
+        "title": "Aurigen"
+      },
+      {
+        "pageName": "xmas",
+        "title": "Christmas ecard",
+        "pageType": "ecard"
+      },
+      {
+        "pageName": "enterprise50",
+        "title": "Enterprise 50"
+      },
+      {
+        "pageName": "ewi",
+        "title": "EWI"
+      }
+    ]
 
 block title
-  title My Page - Home
+  title Audi Liew’s Portfolio
 
 block content
 
-  //- Desktop page
-  section.page.home__page
-    h1.page__title # Index page
-    p xThank you for your supporting :)
-    p
-      a(href="/works/bwi/") bwi
+  .contentArea
+
+    section.projectWrap.projectList.projectList--website
+      each site in sites
+        .project(class=site.pageName)
+          a(
+            class='project__link'
+            href='/works/' + site.pageName + '/'
+          )
+            .project__copywrap #{site.title}
+            .project__preview
+              img(
+                class='project__fgimg lazy'
+                src='/assets/img/sml/' +  (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__fg.png'
+                data-src='/assets/img/' + (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__fg.png'
+              )
+              img(
+                class='project__bgimg lazy'
+                src='/assets/img/sml/' +  (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__bg.jpg'
+                data-src='/assets/img/' + (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__bg.jpg'
+              )
