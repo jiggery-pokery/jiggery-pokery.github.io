@@ -1,0 +1,100 @@
+extends ../../layouts/master.pug
+block variables
+  - var contentWrapperClass = 'caseStudy project--bestworld'
+  - var workName = 'bestworld'
+  - var imgUrlSml = '/assets/img/sml/websites/bestworld/'
+  - var imgUrl = '/assets/img/websites/bestworld/'
+
+block title
+  title Best World International
+
+block content
+  // Intro
+  section.csIntro.csIntro--websitesBestWorld
+    h1 Best World
+    .csIntro__role
+      p Concept & Art Direction, Photography, Responsive design, Front-end development
+    img(
+      src=imgUrl + 'intro__bg.jpg'
+      class='hidden'
+    )
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p Best World specialises in the development and distribution of health and beauty products in 12 markets, including China, Dubai, and Taiwan. As a direct selling company, Best World is very much rooted in the people. Warmth, familiarity, and a sense of kinship. Much like a community.
+      p As Best World is listed on the Singapore Exchange, the website serves as a portal in providing relevant information to all stakeholders.
+      p Corporate and financial information can be quite “dry” at times, so my aim was to keep the experience fresh, and the careful use of typography to help break the monotony.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      .browser.browser--desktop
+        img(
+          src=imgUrlSml +   'screenshot-home.jpg'
+          data-src=imgUrl + 'screenshot-home.jpg'
+          alt='Best World Home page screenshot'
+          class='lazy'
+        )
+      .browser.browser--desktop
+        img(
+          src=imgUrlSml +   'screenshot-about.jpg'
+          data-src=imgUrl + 'screenshot-about.jpg'
+          alt='Best World About Us page screenshot'
+          class='lazy'
+        )
+      .browser.browser--desktop
+        img(
+          src=imgUrlSml +   'screenshot-ir.jpg'
+          data-src=imgUrl + 'screenshot-ir.jpg'
+          alt='Best World Investor Relations page screenshot'
+          class='lazy'
+        )
+    // Mobile screenshots
+    .browserWrap.browserWrap--mobile
+      .browser.browser--mobile
+        img(
+          src=imgUrlSml +   'screenshot-home-mobile.jpg'
+          data-src=imgUrl + 'screenshot-home-mobile.jpg'
+          alt='Best World Home page mobile screenshot'
+          class='lazy'
+        )
+      .browser.browser--mobile
+        img(
+          src=imgUrlSml +   'screenshot-about-mobile.jpg'
+          data-src=imgUrl + 'screenshot-about-mobile.jpg'
+          alt='Best World About Us page mobile screenshot'
+          class='lazy'
+        )
+      .browser.browser--mobile
+        img(
+          src=imgUrlSml +   'screenshot-ir-mobile.jpg'
+          data-src=imgUrl + 'screenshot-ir-mobile.jpg'
+          alt='Best World Investor Relations page mobile screenshot'
+          class='lazy'
+        )
+
+  // Details
+  div
+    img(
+      src=imgUrlSml +   'details-2.jpg'
+      data-src=imgUrl + 'details-2.jpg'
+      alt='Best World design details'
+      class='lazy'
+    )
+
+  // Atmosphere
+  section.csAtmosphere
+    h2 Photography
+    .csAtmosphere__content
+      p.csAtmosphere__caseInPoint Relevance & Openness
+      p I used photographs to convey a sense of openess and attention-to-detail; they also help provide relevant context to the content on the page.
+      p As Best World is a company very much rooted by <i>the people</i>, the colours were graded to be warm and rich.
+    .csAtmosphere__photographyWrap
+      img(
+        src=imgUrlSml +   'photography-1.jpg'
+        data-src=imgUrl + 'photography-1.jpg'
+        alt='Best World photography'
+        class='lazy'
+      )

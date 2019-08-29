@@ -1,0 +1,21 @@
+extends ../../layouts/master.pug
+block variables
+  - var contentWrapperClass = 'caseStudy project--bestworld'
+
+block title
+  title Best World International
+
+block basicSeo
+  meta(name='description' content='Blog postpage')
+  meta(name='keywords', content='blog, page, post')
+  meta(name='author' content='')
+
+block content
+
+  //- Desktop page
+  section.page.blogpost__page
+    h1.page__title # Blog post page
+    p 
+      a(href="/") homie
+    p
+      a(href="/works/sjtc/") sjtc
