@@ -1,0 +1,17 @@
+//- __src/views/mixins/videos.pug
+
+mixin video(fileName, workName, pageType='website')
+  figure
+    .browser.browser--desktop
+      video(
+        class='motionDesignVideos'
+        width='100%'
+        preload
+        controls
+        muted
+        loop
+      )
+        source(
+          src='/assets/vid/' + pageType + 's/' + workName + '/' + fileName
+          type='video/mp4'
+        )
