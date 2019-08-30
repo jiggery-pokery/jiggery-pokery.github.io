@@ -15,7 +15,7 @@ block content
     h1 Christmas eCard
     .csIntro__role
       p Concept & Art Direction, Illustration, Design and front-end development
-    +preloadImage('intro__bg.jpg', workName)
+    +preloadImage('intro__bg.jpg', workName, pageType)
   
   // Profile
   section.csProfile
@@ -27,9 +27,9 @@ block content
   section.csScreenshots
     // Desktop screenshots
     .browserWrap.browserWrap--desktop
-      +ssDesktop('screenshot-home-1.jpg', 'X’mas eCard screenshot', workName)
+      +ssDesktop('screenshot-home-1.jpg', 'X’mas eCard screenshot', workName, pageType)
 
   // Atmosphere
   section.csAtmosphere
     .csAtmosphere__motionWrap
-      +video('motion.mp4', workName)
+      +video('motion.mp4', workName, pageType)
