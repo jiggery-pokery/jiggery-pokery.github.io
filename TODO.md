@@ -2,18 +2,16 @@
 
 ## High Priority
 - [ ] Add video assets
-- [ ] Add JS
+- [x] Add JS
 - [ ] Add SJTC
 - [ ] Add DR’s Secret story
 - [ ] Increase size of Home button
-- [ ] Slow down page transition by abit
 
 ## Mid Priority
-- [ ] Parallax Hero image
-- [ ] Add Alt to all images
-- [ ] Remember Home scroll position after coming back
 
 ## Low Priority
+- [ ] Slow down page transition by abit
+- [ ] Remember Home scroll position after coming back
 
 ---
 
