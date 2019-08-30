@@ -182,7 +182,7 @@ $mainNavMarginLeft				: 15px;
 .mainNav__logoparts--D {
 	z-index: 1;
 	width: 27px;
-	transform: translateX(-52px) translateY(24px) scale(3);
+	transform: translateX(-54px) translateY(21px) scale(2.5);
 	transition-delay:100ms;
 	fill: $logoDarkColour;
 
@@ -204,9 +204,7 @@ $mainNavMarginLeft				: 15px;
 	z-index: 5;
 	width: 7px;
 	transition-delay:100ms;
-	//transform: scaleX(.5) scaleY(0.3) translateX(-150px) translateY(-1px);
-	transform: translateX(-55px) translateY(14px) rotate(90deg);
-	//fill:$logoHoverColour;
+	transform: scaleX(0) scaleY(0);
 
 	.mainHeader--isHomepage & {
 		fill:$logoColour;
