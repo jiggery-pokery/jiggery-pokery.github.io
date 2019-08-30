@@ -25,6 +25,8 @@ html(class='no-js', lang='en')
     block title
       title Audi Liew’s Portfolio
 
+    script(src='https://www.google-analytics.com/analytics.js', async)
+
   body
 
     header.mainHeader.container(
@@ -83,7 +85,7 @@ html(class='no-js', lang='en')
       #gem-wrapper.main.gem-wrapper(data-bb='wrapper')
           .gem-container(
             data-bb='container'
-            data-namespace=namespace
+            data-namespace=namespace? namespace : 'caseStudyView'
             data-pageIsLight=pageIsLight
           )
             article.contentWrapper.caseStudy(
@@ -97,3 +99,5 @@ html(class='no-js', lang='en')
 
     //- block scripts
     block scripts
+      script(src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js')
+      script(src='/assets/js/plugins.js')
