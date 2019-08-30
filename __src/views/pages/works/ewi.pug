@@ -1,21 +1,36 @@
 extends ../../layouts/master.pug
+
 block variables
-  - var contentWrapperClass = 'caseStudy project--bestworld'
+  - var workName = 'ewi'
+  - var pageType = 'website'
 
 block title
-  title Best World International
-
-block basicSeo
-  meta(name='description' content='Blog postpage')
-  meta(name='keywords', content='blog, page, post')
-  meta(name='author' content='')
+  title EWI
 
 block content
+  // Intro
+  section.csIntro(
+    class='csIntro--' + pageType + 's' + workName
+  )
+    h1 EWI
+    .csIntro__role
+      p Concept & Art Direction, Design and Front-end development, Information architecture, Copy-editing
+    +preloadImage('intro__bg.jpg', workName)
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p EWI is a business growth consulting and management training firm that focuses on the issues impacting the international and business strategies of an organization.
+      p I wanted to portray the problem-solving abilities of the company, so I’d included case studies detailing the consulting process.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      +ssDesktop('screenshot-home.jpg', 'EWI Home page screenshot', workName)
+      +ssDesktop('screenshot-industry.jpg', 'EWI Industry page screenshot', workName)
+      +ssDesktop('screenshot-services.jpg', 'EWI Services page screenshot', workName)
 
-  //- Desktop page
-  section.page.blogpost__page
-    h1.page__title # Blog post page
-    p 
-      a(href="/") homie
-    p
-      a(href="/works/sjtc/") sjtc
+  // Details
+  section.csDetails
+    +lazyImage('details-1.jpg', 'EWI design details', workName)

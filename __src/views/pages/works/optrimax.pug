@@ -1,21 +1,48 @@
 extends ../../layouts/master.pug
+
 block variables
-  - var contentWrapperClass = 'caseStudy project--bestworld'
+  - var workName = 'optrimax'
+  - var pageType = 'website'
 
 block title
-  title Best World International
-
-block basicSeo
-  meta(name='description' content='Blog postpage')
-  meta(name='keywords', content='blog, page, post')
-  meta(name='author' content='')
+  title Optrimax
 
 block content
+  // Intro
+  section.csIntro(
+    class='csIntro--' + pageType + 's' + workName
+  )
+    h1 Optrimax
+    .csIntro__role
+      p Concept & Art Direction, Illustration, Micro-copy, Responsive design, Front-end development
+    +preloadImage('intro__bg.jpg', workName)
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p Weight management often conjures up images of pill-popping, hours on the treadmill, or being wrapped up with shrink wrap in a sweltering room. Not the most enjoyable process. Optrimax aims to change the experience of weight management by offering products which are easy to use, made with natural ingredients, and work by optimising our inherent body processes.
+      p For the website redesign, I wanted to bring forth the efficacy of the products in a fun and approachable manner. Vibrant colours and micro-interactions come together to provide a delightful experience, much like how using the products would be like.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      +ssDesktop('screenshot-home.jpg', 'Optrimax Home page screenshot', workName)
+      +ssDesktop('screenshot-product-body-gel.jpg', 'Optrimax Body Gel page screenshot', workName)
+      +ssDesktop('screenshot-why-optrimax.jpg', 'Optrimax Why Optrimax page screenshot', workName)
 
-  //- Desktop page
-  section.page.blogpost__page
-    h1.page__title # Blog post page
-    p 
-      a(href="/") homie
-    p
-      a(href="/works/sjtc/") sjtc
+    // Mobile screenshots
+    .browserWrap.browserWrap--mobile
+      +ssMobile('screenshot-home-mobile.jpg', 'Optrimax Home page mobile screenshot', workName)
+      +ssMobile('screenshot-product-mobile.jpg', 'Optrimax Body Gel page mobile screenshot', workName)
+      +ssMobile('screenshot-why-mobile.jpg', 'Optrimax Why Optrimax page mobile screenshot', workName)
+
+  // Details
+  section.csDetails.csDetails--1
+    +lazyImage('details-1.jpg', 'Optrimax design details', workName)
+
+  // Atmosphere
+  section.csAtmosphere
+    h2 Motion Design
+    .csAtmosphere__motionWrap
+      +video('motion-product-1.mp4', workName)

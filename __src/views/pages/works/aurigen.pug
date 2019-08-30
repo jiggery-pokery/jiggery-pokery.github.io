@@ -1,12 +1,37 @@
 extends ../../layouts/master.pug
 
+block variables
+  - var workName = 'aurigen'
+  - var pageType = 'website'
+
 block title
   title Aurigen
 
 block content
+  // Intro
+  section.csIntro(
+    class='csIntro--' + pageType + 's' + workName
+  )
+    h1 Aurigen
+    .csIntro__role
+      p Front-end development
+    +preloadImage('intro__bg.jpg', workName)
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p Aurigen is a range of health supplements marketed solely for the Chinese market. All Aurigen products are carefully developed using high-quality raw materials under the most stringent safety regulations.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      +ssDesktop('screenshot-home.jpg', 'Aurigen Home page screenshot', workName)
+      +ssDesktop('screenshot-about.jpg', 'Aurigen About Us page screenshot', workName)
+      +ssDesktop('screenshot-products.jpg', 'Aurigen Collections page screenshot', workName)
 
-  //- Desktop page
-  section.page.blogpost__page
-    h1.page__title # Blog post page
-    p 
-      a(href="/") homie
+    // Mobile screenshots
+    .browserWrap.browserWrap--mobile
+      +ssMobile('screenshot-home-mobile.jpg', 'Aurigen Home page mobile screenshot', workName)
+      +ssMobile('screenshot-about-mobile.jpg', 'Aurigen About Us page mobile screenshot', workName)
+      +ssMobile('screenshot-products-mobile.jpg', 'Aurigen Collections page mobile screenshot', workName)

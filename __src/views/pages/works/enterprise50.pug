@@ -1,21 +1,31 @@
 extends ../../layouts/master.pug
+
 block variables
-  - var contentWrapperClass = 'caseStudy project--bestworld'
+  - var workName = 'enterprise50'
+  - var pageType = 'website'
 
 block title
-  title Best World International
-
-block basicSeo
-  meta(name='description' content='Blog postpage')
-  meta(name='keywords', content='blog, page, post')
-  meta(name='author' content='')
+  title Enterprise 50 Awards
 
 block content
-
-  //- Desktop page
-  section.page.blogpost__page
-    h1.page__title # Blog post page
-    p 
-      a(href="/") homie
-    p
-      a(href="/works/sjtc/") sjtc
+  // Intro
+  section.csIntro(
+    class='csIntro--' + pageType + 's' + workName
+  )
+    h1 Enterprise 50 Awards
+    .csIntro__role
+      p Concept, Design and Front-end development
+    +preloadImage('intro__bg.jpg', workName)
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p The Enterprise 50 (E50) Awards recognises local, privately-owned companies who have contributed to economic development in Singapore and abroad. It is jointly organised by <i>The Business Times</i> and <i>KPMG</i>.
+      p I wanted to bring forward the prestige of the awards through the use of colours and the event photographs.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      +ssDesktop('screenshot-home.jpg', 'Enterprise 50 Awards Home page screenshot', workName)
+      +ssDesktop('screenshot-gallery.jpg', 'Enterprise 50 Awards Gallery page screenshot', workName)
