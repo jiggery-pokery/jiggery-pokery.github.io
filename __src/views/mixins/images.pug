@@ -1,0 +1,23 @@
+//- __src/views/mixins/images.pug
+
+mixin preloadImage(fileName, workName, pageType='website')
+  img(
+    src='/assets/img/' + pageType + 's/' + workName + '/' + fileName
+    class='hidden'
+  )
+
+mixin lazyImage(fileName, alt, workName, pageType='website')
+  img(
+    src='/assets/img/sml/' +  pageType + 's/' + workName + '/' + fileName
+    data-src='/assets/img/' + pageType + 's/' + workName + '/' + fileName
+    alt=alt
+    class='lazy'
+  )
+
+mixin ssDesktop(fileName, alt, workName, pageType='website')
+  .browser.browser--desktop
+    +lazyImage(fileName, alt, workName, pageType)
+
+mixin ssMobile(fileName, alt, workName, pageType='website')
+  .browser.browser--mobile
+    +lazyImage(fileName, alt, workName, pageType)

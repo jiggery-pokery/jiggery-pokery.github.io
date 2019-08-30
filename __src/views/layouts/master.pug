@@ -1,4 +1,6 @@
 //- Master layout
+include ../mixins/images
+
 block variables
 doctype html
 html(class='no-js', lang='en')
@@ -37,9 +39,6 @@ html(class='no-js', lang='en')
             <svg id="logoD" class="mainNav__logoparts mainNav__logoparts--D" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.8 40"><path id="logoD__path" d="M13.3 30.7C6.2 30.7.4 25 .4 17.9.4 10.8 6.2 5 13.3 5c7.1 0 12.9 5.8 12.9 12.9 0 7.1-5.8 12.8-12.9 12.8z"/></svg>
             <svg id="logoI" class="mainNav__logoparts mainNav__logoparts--I" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.5 40"><path id="logoI__path" d="M.6 35.3V17.5H6v17.8H.6z"/></svg>            
 
-    if isHome
-      p wow, is home sia
-
     .container.mainContainer
       #gem-wrapper.main.gem-wrapper(data-bb='wrapper')
           .gem-container(
@@ -47,9 +46,9 @@ html(class='no-js', lang='en')
             data-namespace=namespace
             data-pageIsLight=pageIsLight
           )
-            article.contentWrapper(
+            article.contentWrapper.caseStudy(
               role='main'
-              class=contentWrapperClass
+              class=workName? 'project--' + workName : ''
             )
               block content
 
