@@ -38,9 +38,9 @@
 //    transform: translateY(10px);
 //  }
 
-  animation-duration: $speedNormal, $speedNormal;
-  animation-name: fadeIn--slow, slideInUp--80;
-  animation-fill-mode:backwards, backwards;
+  // animation-duration: $speedNormal, $speedNormal;
+  // animation-name: fadeIn--slow, slideInUp--80;
+  // animation-fill-mode:backwards, backwards;
 
   &:nth-child(odd) {
     clear: left;

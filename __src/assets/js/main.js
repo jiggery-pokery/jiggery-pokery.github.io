@@ -220,6 +220,7 @@ import * as helper from './imports/helpers';
       //console.log("home on enter");
     //},
     onEnterCompleted:function() {
+      var body = document.querySelector('body');
      var tilts = document.querySelectorAll('a.project__link');
      var projWrapContainer = document.querySelector('.projectWrap');
 
@@ -238,15 +239,19 @@ import * as helper from './imports/helpers';
       new TiltFx(el);
      });
 
-     this.bLazy = new Blazy({
-       selector:".lazy",
-       loadInvisible:true,
-       successClass:"lazyLoaded"
+     imagesLoaded(projWrapContainer, function() {
+       body.className = '';
      });
+
+     //this.bLazy = new Blazy({
+     //  selector:".lazy",
+     //  loadInvisible:true,
+     //  successClass:"lazyLoaded"
+     //});
     },
     onLeave:function() {
       // Destroy the bLazy listeners
-      this.bLazy.destroy();
+      //this.bLazy.destroy();
     }
   });
 

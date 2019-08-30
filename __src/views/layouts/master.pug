@@ -25,9 +25,14 @@ html(class='no-js', lang='en')
     block title
       title Audi Liew’s Portfolio
 
+    script.
+      document.documentElement.className="js"
+
     script(src='https://www.google-analytics.com/analytics.js', async)
 
-  body
+  body(
+    class=isHomepage? 'loading' : ''
+  )
 
     header.mainHeader.container(
       role='banner'
