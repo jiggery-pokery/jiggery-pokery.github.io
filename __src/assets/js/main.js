@@ -119,8 +119,8 @@ import * as helper from './imports/helpers';
   });
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, newContainer) {
-    ga('set', 'page', window.location.pathname);
-    ga('send', 'pageview');
+    //ga('set', 'page', window.location.pathname);
+    //ga('send', 'pageview');
 
     // TEMP app.updateMainNav();
     var _newContentData = newContainer.getAttribute("data-pageislight");
