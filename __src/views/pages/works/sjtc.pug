@@ -1,0 +1,37 @@
+extends ../../layouts/master.pug
+
+block variables
+  - var workName = 'sjtc'
+  - var pageType = 'website'
+
+block title
+  title World Learner
+
+block content
+  // Intro
+  section.csIntro(
+    class='csIntro--' + pageType + 's' + workName
+  )
+    h1 World Learner
+    .csIntro__role
+      p Interaction and Responsive design, Front-end development
+    +preloadImage('intro__bg.jpg', workName)
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p World Learner is a corporate social responsibility initiative that provides cross-cultural student immersion scholarships for needy students from China. From the programs, students get to explore cultural diversity, learn about science, art, and technology, and engage in charity work.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      +ssDesktop('screenshot-home.jpg', 'World Learner Home page screenshot', workName)
+      +ssDesktop('screenshot-stories.jpg', 'World Learner Stories page screenshot', workName)
+      +ssDesktop('screenshot-faq.jpg', 'World Learner FAQ page screenshot', workName)
+
+    // Mobile screenshots
+    .browserWrap.browserWrap--mobile
+      +ssMobile('screenshot-home-mobile.jpg', 'World Learner Home page mobile screenshot', workName)
+      +ssMobile('screenshot-stories-mobile.jpg', 'World Learner Stories page mobile screenshot', workName)
+      +ssMobile('screenshot-faq-mobile.jpg', 'World Learner FAQ page mobile screenshot', workName)
