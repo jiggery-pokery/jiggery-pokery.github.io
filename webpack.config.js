@@ -77,9 +77,8 @@ module.exports = (env, argv) => {
       }),
       new CopyWebpackPlugin([
         {
-          from: '**/*',
           context: '__src',
-          ignore: ['*.js', '*.scss', '*.pug']
+          from: 'assets/img/**/*'
         },
         {
           from: '__src/assets/js/plugins.js',
