@@ -203,6 +203,9 @@ $csIntroWidth			:53%;
 .csProfile {	
 	padding-top: 55px;
 	padding-bottom: 65px;
+	font-size: 18px;
+	line-height: 30px;
+		
 	@media screen and (max-width:$menuBecomesSml) {
 		padding-bottom:10px;
 	}
