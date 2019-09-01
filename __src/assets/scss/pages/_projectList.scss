@@ -38,22 +38,19 @@
 //    transform: translateY(10px);
 //  }
 
-  animation-duration: 500ms, 600ms;
-  animation-name: fadeIn--slow, slideInUp--80;
-  animation-fill-mode:backwards, backwards;
-
+  //animation-duration: 500ms, 600ms;
+  //animation-name: fadeIn--slow, slideInUp--80;
+  //animation-fill-mode:backwards, backwards;
+ 
   &:nth-child(odd) {
     clear: left;
   }
 
-  @for $i from 1 through 9 {
-    &:nth-child(#{$i}) {
-//      .is-inserted & {
-//        opacity: 0;
-        animation-delay: 500 + ($speedFast * $i), 500 + ($speedFast * $i);
-//      }
-    }
-  }
+  //@for $i from 1 through 9 {
+  //  &:nth-child(#{$i}) {
+  //      animation-delay: 500 + ($speedFast * $i), 500 + ($speedFast * $i);
+  //  }
+  //}
 
   @media screen and (max-width: $project1Column) {
     width: 100%;
@@ -81,7 +78,7 @@
   //z-index: 2;
   display: inline-block;
   font-weight: bold;
-  font-size: 1.9rem;
+  font-size: 2.3rem;
 //  opacity: 0;
   transition: opacity $speedSlow $transitionNormal, transform $speedSlow $easeInOutQuint;
   //transition: opacity $speedSlow $transitionNormal;
