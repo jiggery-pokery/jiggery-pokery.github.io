@@ -76,8 +76,6 @@ import * as helper from './imports/helpers';
     currentPathName: "",
     currentPageIsDark: true,
     isSmallScreen: true
-    //numOfNav:"",
-    //numOfPathNames: ""
   }
 
   ////
@@ -92,85 +90,10 @@ import * as helper from './imports/helpers';
     transAnimator: ""
   }
 
-  ////
-  // Listeners
-  //
-
-  // Prevents page from refreshing if the link to current page is clicked
-  // https://github.com/luruke/barba.js/issues/34
-  //app.components.mainNavID.addEventListener("click", function(e){
-  //  if(e.target.href === window.location.href) {
-  //    e.preventDefault();
-  //    e.stopPropagation();
-  //  }
-  //});
-
-  // When burger button is pressed, toggle the visibility of the small nav
-  //app.components.mainNavBurger.addEventListener("click", function(e){
-  //  app.toggleSmlMainNav();
-  //});
 
   ////
   // App functions
   //
-  /*
-  app.toggleSmlMainNav = function(forceHide) {
-    // ToDo: Add classlist.js for <= ie9
-    if(forceHide) {
-      app.components.mainNavBurger.classList.remove(app.classes.isActive);
-      app.components.navigationBar.classList.remove(app.classes.isActive);
-    } else {
-      // Toggle active class for mainNavBurger; ie not support classList.toggle
-      if(app.components.mainNavBurger.classList.contains(app.classes.isActive)) {
-        app.components.mainNavBurger.classList.remove(app.classes.isActive);
-      } else {
-        app.components.mainNavBurger.classList.add(app.classes.isActive);
-      }
-
-      // Toggle active class for navigation; ie not support classList.toggle
-      if(app.components.navigationBar.classList.contains(app.classes.isActive)) {
-        app.components.navigationBar.classList.remove(app.classes.isActive);
-      } else {
-        app.components.navigationBar.classList.add(app.classes.isActive);
-      }
-    }
-  }
-
-  app.removeAllMainNavClass = function(classNameToRemove) {
-    for (var i=0; i < app.status.numOfNav; i++) {
-      app.components.navigationLinksAll[i].classList.remove(classNameToRemove);
-    }
-  }
-
-  app.addAllMainNavClass = function(classNameToAdd) {
-    for (var i=0; i < app.status.numOfNav; i++) {
-      app.components.navigationLinksAll[i].classList.remove(classNameToAdd);
-    }
-  }
-
-  app.updateMainNav = function() {
-    // Update active page on main nav
-    // $navigationLinksAll: all links on mainnav
-    // $navigationLinkIsActive: matched link by href value
-    //app.status.currentPathName = st.url.split(window.location.origin).toString().substr(1);
-
-    var _c = window.location.pathname;
-
-    app.removeAllMainNavClass(app.classes.isActive);
-
-    app.status.currentPageType = ""
-    for(var i=0; i<app.status.numOfPathNames; i++) {
-      var regexr = new RegExp(app.classes.pathNames[i]);
-      if(_c.match(regexr) != null) {
-        app.status.currentPageType = app.classes.pathNames[i];
-        app.components.navigationLinks[app.status.currentPageType].classList.add(app.classes.isActive);
-        //console.log(app.components.navigationLinks[app.status.currentPageType]);
-
-      }
-    }
-  }
-  */
-
   app.updateMainNavToLight = function(changeNavToLight) {
     if (changeNavToLight) {
       app.components.mainHeader.classList.add(app.classes.mainHeaderLightClass);
@@ -186,50 +109,16 @@ import * as helper from './imports/helpers';
   //
 
   Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
-    //var $is = HTMLElement;
-    //console.log($(HTMLElement).parent());
-    //$("body").addClass(classes.IsLoading);
-    //HTMLElement.classList.add(app.classes.isTransitingOut);
     if (window.location.pathname == "/") {
-      //console.log(HTMLElement);
       HTMLElement.classList.add(app.classes.isTransitingOut);
     } else {
       if(HTMLElement.classList.contains("pageNavigation__links")) {
         HTMLElement.classList.add(app.classes.isTransitingOut);
       }
     }
-    //app.toggleSmlMainNav(true);
   });
 
-  //Barba.Dispatcher.on('initStateChange', function(st) {
-
-    ////////////////////////////////
-    //
-    // Update active page on main nav
-    // $navigationLinks: all links on mainnav
-    // $navigationLinkIsActive: matched link by href value
-    //app.updateMainNav(st);
-
-    //console.log("initStateChange", st.url);
-    //projectListView.onEnter();
-  //});
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, newContainer) {
-    //$(newContainer).addClass(classes.IsInserted);
-    //console.log("currentStatus:", currentStatus);
-    //console.log("oldStatus:", oldStatus);
-    //console.log("newContainer:", newContainer);
-
-    /*if (window.location.pathname != "/") {
-      console.log("newPageReady", window.location.pathname);
-      var bLazy = new Blazy({
-        selector:".lazy",
-        loadInvisible:true,
-        offset:200,
-        successClass:"lazyLoaded"
-      });
-      //bLazy.load();
-    }*/
-
     //ga('set', 'page', window.location.pathname);
     //ga('send', 'pageview');
 
@@ -247,10 +136,8 @@ import * as helper from './imports/helpers';
         app.updateMainNavToLight(false);
       }
     }
-    //console.log("A",_newContentData);
 
     // ToDo: This triggers a repaint, not gd
-    //console.log(currentStatus, newContainer);
     if(currentStatus.namespace == "projectList") {
       app.components.mainHeader.classList.add(app.classes.isHomepage);
     } else {
@@ -405,7 +292,6 @@ import * as helper from './imports/helpers';
 
   // Call new Transition 
   Barba.Pjax.getTransition = function() {
-    //var transitionObj = app.components.barbaFadeTransition;
     var transitionObj;
 
     if (Barba.HistoryManager.prevStatus().namespace === 'caseStudyView') {
@@ -426,14 +312,14 @@ import * as helper from './imports/helpers';
       //console.log("home on enter");
     //},
     onEnterCompleted:function() {
+      var body = document.querySelector('body');
      var tilts = document.querySelectorAll('a.project__link');
      var projWrapContainer = document.querySelector('.projectWrap');
 
      // We want to disable the click of other projects when the current one is still loading
      // Hack way since it's better to stop current loading, but currently not able
      projWrapContainer.addEventListener("click",function(e) {
-      //console.log(e);
-      //this.classList.add(app.classes.isTransitingOut);
+
       if(Barba.Pjax.transitionProgress) {
         //console.log(Barba.Pjax.transitionProgress);
         e.preventDefault();
@@ -445,15 +331,19 @@ import * as helper from './imports/helpers';
       new TiltFx(el);
      });
 
-     this.bLazy = new Blazy({
-       selector:".lazy",
-       loadInvisible:true,
-       successClass:"lazyLoaded"
+     imagesLoaded(projWrapContainer, function() {
+       body.className = '';
      });
+
+     //this.bLazy = new Blazy({
+     //  selector:".lazy",
+     //  loadInvisible:true,
+     //  successClass:"lazyLoaded"
+     //});
     },
     onLeave:function() {
       // Destroy the bLazy listeners
-      this.bLazy.destroy();
+      //this.bLazy.destroy();
     }
   });
 
@@ -463,7 +353,7 @@ import * as helper from './imports/helpers';
     browserWatchers:'',
     bLazy:'',
     //onEnter: function() {
-    //*  console.log("Status: proj onEnter");
+    //  console.log("Status: proj onEnter");
     //},
     onEnterCompleted: function() {
       var _allBrowsers = document.querySelectorAll(app.classes.browserScreenshots);
@@ -547,7 +437,6 @@ import * as helper from './imports/helpers';
     //Barba.Pjax.start();
 
     if(helper.isTrident()) {
-      //console.log(isTrident());
       document.documentElement.classList.add(app.classes.isTrident);
     }
 
@@ -567,22 +456,6 @@ import * as helper from './imports/helpers';
     if(document.querySelector("."+app.classes.barbaContainerClass).getAttribute("data") == app.classes.pageIsLight) {
       app.status.currentPageIsDark = false;
     };
- 
-    //app.components.transAnimator = new TimelineLite();
-
-    //
-    // Store the number of navigation links for iteration later
-    //app.status.numOfNav = app.components.navigationLinksAll.length;
-    //app.status.numOfPathNames = app.classes.pathNames.length;
-
-    //
-    // Loop through all the navigation links on navbar and 
-    // cache them into app.components.navigationLinks
-    //for(var i=0;i<app.status.numOfNav;i++){
-    //  var name = app.classes.pathNames[i];
-    //  var link = app.components.navigationBar.querySelector("[data-pagetype$="+name+"]");
-    //  app.components.navigationLinks[name] = link;
-    //};
   }
 
   app.init();

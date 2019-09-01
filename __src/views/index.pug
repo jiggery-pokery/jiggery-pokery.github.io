@@ -66,12 +66,10 @@ block content
               .project__title #{site.title}
             .project__preview
               img(
-                class='project__fgimg lazy'
-                src='/assets/img/sml/' +  (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__fg.png'
-                data-src='/assets/img/' + (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__fg.png'
+                class='project__fgimg'
+                src='/assets/img/' + (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__fg.png'
               )
               img(
-                class='project__bgimg lazy'
-                src='/assets/img/sml/' +  (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__bg.jpg'
-                data-src='/assets/img/' + (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__bg.jpg'
+                class='project__bgimg'
+                src='/assets/img/' + (site.pageType ? site.pageType : 'website') + 's/' + site.pageName + '/thumb__bg.jpg'
               )
