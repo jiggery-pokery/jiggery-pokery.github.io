@@ -106,6 +106,11 @@
     opacity: .4;
   }
 
+  &::after {
+    content: ' ';
+    
+  }
+
   .project__link:hover & {
     transform: scale(1.2);
 
@@ -119,15 +124,30 @@
   #{$IsTransitingOut}:hover & {
     transform: scale(1.1);
     &:before {
-      //transform-origin: left;
-      //transform: scaleY(2);
-      animation-name: knightRiderScale;
-      animation-duration: 1.5s; /* or: Xms */
+      transform: scaleX(0);
+      //animation-name: knightRiderScale;
+      //animation-duration: 1.5s; /* or: Xms */
+      //animation-iteration-count: infinite;
+      //animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+    }
+
+    &::after {
+      display: block;
+      height: 50px;
+      width: 50px;
+      
+      opacity: .5;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -25px;
+      margin-top: -25px;
+      z-index: -1;
+      animation-name: spin; 
+      animation-duration: 1s;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
       animation-iteration-count: infinite;
-      //animation-direction: alternate; /* or: normal */
-      animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-      //animation-fill-mode: both; /* or: backwards, both, none */
-      //animation-delay: 2s; /* or: Xms */
     }
   }
 
