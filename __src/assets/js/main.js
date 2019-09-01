@@ -315,7 +315,7 @@ import * as helper from './imports/helpers';
   });
   */
   
-  app.components.barbaLoadTransition = Barba.BaseTransition.extend({
+  app.components.transitToCaseStudy = Barba.BaseTransition.extend({
     start: function() {
       Promise
         .all([this.newContainerLoading])
@@ -374,20 +374,47 @@ import * as helper from './imports/helpers';
     }
   });
 
+  app.components.transitToHome = Barba.BaseTransition.extend({
+    start: function() {
+      Promise
+        .all([this.newContainerLoading])
+        .then(this.slideInNew.bind(this));
+    },
+
+    slideInNew: function() {
+      var _this = this;
+      var _oldContainer = this.oldContainer;
+      var _newContainer = this.newContainer;
+      var tl = new TimelineLite();
+
+      function completeToDO() {
+        _this.done();
+        TweenLite.set(window,{scrollTo:0});
+      }
+
+      function doGSAP() {
+        tl
+          .to(_oldContainer, app.timings.Normal, {x:'100px',opacity: 0})
+          .call(completeToDO)
+          .from(_newContainer, app.timings.Normal, {x:'-50px'});
+      }
+
+      doGSAP();
+    }
+  });
+
   // Call new Transition 
   Barba.Pjax.getTransition = function() {
     //var transitionObj = app.components.barbaFadeTransition;
     var transitionObj;
 
-    transitionObj = app.components.barbaLoadTransition;
-    /*      
-    if (app.status.isSmallScreen) {
-      transitionObj = app.components.barbaFadeTransition;
+    if (Barba.HistoryManager.prevStatus().namespace === 'caseStudyView') {
+      // Case Study back to home
+      transitionObj = app.components.transitToHome;
     } else {
-      transitionObj = app.components.barbaLoadTransition;        
-      //transitionObj = app.components.barbaSlideTransition;
+      // Home to case study
+      transitionObj = app.components.transitToCaseStudy;
     }
-    */
 
     return transitionObj;
   };
@@ -496,7 +523,7 @@ import * as helper from './imports/helpers';
     // Load commonly used google fonts
     WebFont.load({
       google: {
-        families: ['Julius Sans One', 'Ubuntu:300,400,300italic']
+        families: ['Catamaran:300,300italic,400,700,800,900']
       }
     });
 

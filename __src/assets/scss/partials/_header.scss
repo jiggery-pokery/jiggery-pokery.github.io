@@ -141,40 +141,35 @@ $mainNavMarginLeft				: 15px;
   z-index: 5;
 	transition-delay:200ms;
 
+	fill:$whiteSmoke;
 	//transform:rotate(-90deg);
 	//transform:scaleX(0.6) scaleY(0.4) translateY(-17px);
-	transform:rotate(-90deg) translateY(-3px) translateX(-15px);
+	transform:rotate(-90deg) translateY(-3px) translateX(-15px) scale(0.6);
 
 	.mainHeader--isHomepage & {
+		fill:$logoColour;
 		transform: rotate(0);
 		transition-delay:0;
 	}
-}
 
-//.mainNav__logoparts--U,
-//.mainNav__logoparts--I
-//.mainNav__logoparts--D
-// {
-//	transform: scale(0);
-//  transform: translateX(-57px) scale(1.3);
-//  z-index: 1;
-//
-//	.mainHeader--light & {
-//		fill: $logoDarkColour;
-//	}
-//
-//	.mainHeader--isHomepage & {
-//		transform: scale(1);
-//	}
-//}
+	a:hover & {
+		transform: rotate(-90deg) translateY(-5px) translateX(-15px) scale(0.6);
+
+		.mainHeader--isHomepage & {
+			transform: none;
+		}
+	}
+}
 
 .mainNav__logoparts--U {
 	z-index: 5;
   width: 20px;
 	transition-delay:150ms;
-	//transform: scaleX(0.6) scaleY(0.4) translateX(-50px) translateY(-3px);
-	transform: scaleX(0) scaleY(0);
+	transform: scaleY(0.5) translateX(-20px) translateY(25px);
+	fill:$whiteSmoke;
+	//transform: scaleX(0) scaleY(0);
 	.mainHeader--isHomepage & {
+		fill:$logoColour;
 		transform: none;
 		transition-delay:0;
 	}
@@ -182,7 +177,7 @@ $mainNavMarginLeft				: 15px;
 .mainNav__logoparts--D {
 	z-index: 1;
 	width: 27px;
-	transform: translateX(-54px) translateY(21px) scale(2.5);
+	transform: translateX(-52px) translateY(21px) scale(2.3);
 	transition-delay:100ms;
 	fill: $logoDarkColour;
 
@@ -194,9 +189,11 @@ $mainNavMarginLeft				: 15px;
 
 	a:hover & {
 		fill:darken($logoDarkColour,20);
+		transform: translateX(-52px) translateY(21px) scale(2.5);
 
 		.mainHeader--isHomepage & {
 			fill:$logoColour;
+			transform: none;
 		}
 	}
 }
