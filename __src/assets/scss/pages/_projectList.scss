@@ -77,8 +77,9 @@
 }
 
 .project__title {
-  display: inline-block;
   position:relative;
+  //z-index: 2;
+  display: inline-block;
   font-weight: bold;
   font-size: 1.9rem;
 //  opacity: 0;
@@ -86,22 +87,26 @@
   //transition: opacity $speedSlow $transitionNormal;
   transition-delay: $speedSlow, none; // For hover out
 
-
-  &:before {
+  &::before {
     //width: 16px;
     //left: 50%;
-    //margin-left: -8px;
+    //margin-left: -8px; 
     content: " ";
     position: absolute;
-    height: 3px;
-    bottom: -15px;
+    z-index: -1;
+
+    height: 100%;
+    width:  100%;
+    top: 0;
     left: 0;
-    width: 100%;
-    margin-left: 0;
-    z-index: 3;
+
+    margin-left: -10px;
+    margin-top: -8px;
+    padding: 10px;
+
     transform: scaleX(0);
-    transition: transform $speedNormal ease-out;
-    //opacity: .5;
+    transition: transform 200ms ease-out;
+    opacity: .4;
   }
 
   .project__link:hover & {
@@ -147,7 +152,7 @@
   //backface-visibility: 0;
   transform: scale(1.05); // Fix the 1 pixel gap
   backface-visibility: hidden;
-  transition: transform $speedSlow $transitionNormal;
+  transition: transform 7s cubic-bezier(0,.6,.45,1);
   //transition-delay: $speedVerySlow;
 
   img {
@@ -161,11 +166,11 @@
 
     //display: none;
     //position:absolute;
-  }
+  } 
 
-//  .project:hover & {
-//    transform:scale(1.15);
-//  }
+  .project:hover & {
+    transform:scale(1.15);
+  }
 
 //  @media screen and (max-width: $project1Column) {
 //    .project:hover & {
