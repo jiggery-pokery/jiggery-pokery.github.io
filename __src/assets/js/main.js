@@ -75,7 +75,8 @@ import * as helper from './imports/helpers';
     currentPageType: "",
     currentPathName: "",
     currentPageIsDark: true,
-    isSmallScreen: true
+    isSmallScreen: true,
+    homepageLoaded: false,
   }
 
   ////
@@ -312,9 +313,8 @@ import * as helper from './imports/helpers';
       //console.log("home on enter");
     //},
     onEnterCompleted:function() {
-      var body = document.querySelector('body');
-     var tilts = document.querySelectorAll('a.project__link');
-     var projWrapContainer = document.querySelector('.projectWrap');
+      var tilts = document.querySelectorAll('a.project__link');
+      var projWrapContainer = document.querySelector('.projectWrap');
 
      // We want to disable the click of other projects when the current one is still loading
      // Hack way since it's better to stop current loading, but currently not able
@@ -331,9 +331,29 @@ import * as helper from './imports/helpers';
       new TiltFx(el);
      });
 
-     imagesLoaded(projWrapContainer, function() {
-       body.className = '';
-     });
+     if (!app.status.homepageLoaded) {
+      var body = document.querySelector('body');
+      var logo = document.querySelector('.mainNav__logoAnchor');
+      var projs = document.querySelectorAll('.project');
+      var tl = new TimelineLite({
+        paused: true,
+        onComplete: function() {
+          console.log('done');
+          TweenLite.set(projs, {clearProps: 'all'});
+        }
+       });
+       
+      imagesLoaded(projWrapContainer, function() {
+        tl
+          .from(logo, 1, {opacity:0})
+          .staggerFrom(projs, .4, {ease: Power1.easeOut, y: "+=60px"}, .2, 0)
+          .staggerFrom(projs, .6, {ease: Power4.easeOut, opacity: 0}, .2, 0)
+          ;
+        app.status.homepageLoaded = true;
+        body.className = '';
+        tl.play();
+      });
+     }
 
      //this.bLazy = new Blazy({
      //  selector:".lazy",
