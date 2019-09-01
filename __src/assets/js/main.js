@@ -230,8 +230,8 @@ import * as helper from './imports/helpers';
       //bLazy.load();
     }*/
 
-    ga('set', 'page', window.location.pathname);
-    ga('send', 'pageview');
+    //ga('set', 'page', window.location.pathname);
+    //ga('send', 'pageview');
 
     // TEMP app.updateMainNav();
     var _newContentData = newContainer.getAttribute("data-pageislight");
