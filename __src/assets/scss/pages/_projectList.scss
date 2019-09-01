@@ -38,7 +38,7 @@
 //    transform: translateY(10px);
 //  }
 
-  animation-duration: $speedNormal, $speedNormal;
+  animation-duration: 500ms, 600ms;
   animation-name: fadeIn--slow, slideInUp--80;
   animation-fill-mode:backwards, backwards;
 
@@ -50,7 +50,7 @@
     &:nth-child(#{$i}) {
 //      .is-inserted & {
 //        opacity: 0;
-        animation-delay: 160 + ($speedFast * $i), 140 + ($speedFast * $i);
+        animation-delay: 500 + ($speedFast * $i), 500 + ($speedFast * $i);
 //      }
     }
   }
@@ -83,7 +83,7 @@
   font-weight: bold;
   font-size: 1.9rem;
 //  opacity: 0;
-  transition: opacity $speedSlow $transitionNormal, transform $speedFast ease-out;
+  transition: opacity $speedSlow $transitionNormal, transform $speedSlow $easeInOutQuint;
   //transition: opacity $speedSlow $transitionNormal;
   transition-delay: $speedSlow, none; // For hover out
 
@@ -95,22 +95,22 @@
     position: absolute;
     z-index: -1;
 
-    height: 100%;
+    height: 100%; 
     width:  100%;
     top: 0;
     left: 0;
 
     margin-left: -10px;
-    margin-top: -8px;
+    margin-top:  -10px;
     padding: 10px;
 
     transform: scaleX(0);
-    transition: transform 200ms ease-out;
+    transition: transform 200ms $easeInOutSine;
     opacity: .4;
   }
 
   .project__link:hover & {
-    transform: scale(1.1);
+    transform: scale(1.2);
 
     &:before {
      //opacity: 1;
