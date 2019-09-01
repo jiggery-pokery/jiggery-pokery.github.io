@@ -3,7 +3,11 @@ block variables
   - var isHomepage = true
   - var namespace = 'projectList'
   - 
-    sites = [
+    var sites = [
+      {
+        "pageName": "sjtc",
+        "title": "World Learner"
+      },
       {
         "pageName": "bestworld",
         "title": "Best World"
@@ -58,7 +62,8 @@ block content
             class='project__link'
             href='/works/' + site.pageName + '/'
           )
-            .project__copywrap #{site.title}
+            .project__copywrap 
+              .project__title #{site.title}
             .project__preview
               img(
                 class='project__fgimg lazy'

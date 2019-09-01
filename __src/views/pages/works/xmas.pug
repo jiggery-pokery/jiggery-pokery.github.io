@@ -1,21 +1,35 @@
 extends ../../layouts/master.pug
+
 block variables
-  - var contentWrapperClass = 'caseStudy project--bestworld'
+  - var workName = 'xmas'
+  - var pageType = 'ecard'
 
 block title
-  title Best World International
-
-block basicSeo
-  meta(name='description' content='Blog postpage')
-  meta(name='keywords', content='blog, page, post')
-  meta(name='author' content='')
+  title Christmas eCard
 
 block content
+  // Intro
+  section.csIntro(
+    class='csIntro--' + pageType + 's' + workName
+  )
+    h1 Christmas eCard
+    .csIntro__role
+      p Concept & Art Direction, Illustration, Design and front-end development
+    +preloadImage('intro__bg.jpg', workName, pageType)
+  
+  // Profile
+  section.csProfile
+    .csIntro__standfast
+      p When we think of Christmas, it often conjures up images and sounds of the church choir, and a sense of peace and tranquility. I wanted to impart those feelings to the user together with the messages from the company.
+      p I decided on the use of a cinemagraph, by which the juxtaposition of static and moving objects help to draw the attention of the user into the visuals. A scene of a winter’s night was chosen to set the mood.
+  
+  // Screenshots
+  section.csScreenshots
+    // Desktop screenshots
+    .browserWrap.browserWrap--desktop
+      +ssDesktop('screenshot-home-1.jpg', 'X’mas eCard screenshot', workName, pageType)
 
-  //- Desktop page
-  section.page.blogpost__page
-    h1.page__title # Blog post page
-    p 
-      a(href="/") homie
-    p
-      a(href="/works/sjtc/") sjtc
+  // Atmosphere
+  section.csAtmosphere
+    .csAtmosphere__motionWrap
+      +video('motion.mp4', workName, pageType)

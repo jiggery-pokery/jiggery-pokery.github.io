@@ -75,11 +75,16 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].css'
       }),
-      new CopyWebpackPlugin([{
-        from: '**/*',
-        context: '__src',
-        ignore: ['*.js', '*.scss', '*.pug']
-      }]),
+      new CopyWebpackPlugin([
+        {
+          context: '__src',
+          from: 'assets/img/**/*'
+        },
+        {
+          from: '__src/assets/js/plugins.js',
+          to: 'assets/js/plugins.js'
+        }
+      ]),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: '__src/views/index.pug',
