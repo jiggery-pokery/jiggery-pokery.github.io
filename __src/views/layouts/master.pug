@@ -88,9 +88,9 @@ html(class='no-js', lang='en')
             data-namespace=namespace? namespace : 'caseStudyView'
             data-pageIsLight=pageIsLight
           )
-            article.contentWrapper.caseStudy(
+            article.contentWrapper(
               role='main'
-              class=workName? 'project--' + workName : ''
+              class=workName? 'caseStudy project--' + workName : ''
             )
               block content
 

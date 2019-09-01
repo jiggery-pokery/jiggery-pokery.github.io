@@ -21,7 +21,7 @@ block variables
         "title": "Mondella Contours"
       },
       {
-        "pageName": "Optrimax",
+        "pageName": "optrimax",
         "title": "Optrimax"
       },
       {
@@ -57,7 +57,7 @@ block content
 
     section.projectWrap.projectList.projectList--website
       each site in sites
-        .project(class=site.pageName)
+        .project(class='project--' + site.pageName)
           a(
             class='project__link'
             href='/works/' + site.pageName + '/'
