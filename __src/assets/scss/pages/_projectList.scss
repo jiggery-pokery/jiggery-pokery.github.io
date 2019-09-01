@@ -79,6 +79,7 @@
 .project__title {
   display: inline-block;
   position:relative;
+  font-weight: bold;
   font-size: 1.9rem;
 //  opacity: 0;
   transition: opacity $speedSlow $transitionNormal, transform $speedFast ease-out;

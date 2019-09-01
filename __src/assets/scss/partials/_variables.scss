@@ -19,14 +19,14 @@ $offWhiteDark								: rgb(216, 216, 216);
 $aqua												: rgb(39, 206, 230);
 $gold												: gold;
 $skyBlue										: rgb(135,206,235);
-
+ 
 $purple900									: #4A148C;
 $purple800									: #6A1B9A;
 $cyanA400										: #00E5FF;
 $cyanA200										: #18FFFF;
 
-$bgcolour										: $darkGray;
-$contentTextColour					: $white;
+$bgcolour										: $white;
+$contentTextColour					: $darkGray;
 $secondaryTextColour				: $lightGray;
 
 $primaryColour							: lighten($skyBlue,5);
@@ -35,7 +35,7 @@ $primaryColourLight					: $purple800;
 $accentColour								: $cyanA400;
 $accentColourLight					: $cyanA200;
 
-$logoColour									: $white;
+$logoColour									: $midGray;
 $logoHoverColour						: lighten($skyBlue,5);
 $logoDarkColour							: darken($skyBlue,10);
 

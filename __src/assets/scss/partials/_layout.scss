@@ -10,11 +10,11 @@ html {
 }
 
 body {
+	padding:0;
+	margin: 0;
 	height:100%;
 	overflow-y: scroll; // to always have vertical scrollbar
-	background-color:$bgcolour;
 	//background-color:gold;
-	color:$contentTextColour;
 
 //	.js & {
 //
