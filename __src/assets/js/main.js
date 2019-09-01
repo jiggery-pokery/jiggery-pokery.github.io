@@ -496,7 +496,7 @@ import * as helper from './imports/helpers';
     // Load commonly used google fonts
     WebFont.load({
       google: {
-        families: ['Julius Sans One', 'Ubuntu:300,400,300italic']
+        families: ['Catamaran:300,300italic,400,700,800,900']
       }
     });
 
