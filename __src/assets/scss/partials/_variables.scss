@@ -14,8 +14,8 @@ $white											: rgb(255,255,255);
 $whiteSmoke									: rgb(245,245,245);
 //$offWhite										: rgb(204, 204, 204);
 $offWhite										: rgb(142, 142, 142);
-$offWhiteLight							: rgb(180, 180, 180);;
-$offWhiteDark								: rgb(216, 216, 216);
+$offWhiteLight							: rgb(180, 180, 180);
+$offWhiteDark								: rgb(216, 216, 216); 
 
 $aqua												: rgb(39, 206, 230);
 $gold												: gold;
@@ -29,6 +29,7 @@ $cyanA200										: #18FFFF;
 $bgcolour										: $whiteSmoke;
 $contentTextColour					: $darkGray;
 $secondaryTextColour				: $lightGray;
+$borderColour               : $offWhiteDark;
 
 $primaryColour							: lighten($skyBlue,5);
 $primaryColourDark					: darken($skyBlue,10);

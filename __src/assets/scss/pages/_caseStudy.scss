@@ -222,7 +222,7 @@ $csIntroWidth			:53%;
 	display:flex;
 	flex-wrap:wrap;
 	padding: $containerTopPadding 0;
-	border-bottom:1px solid $midGray;
+	border-bottom:1px solid $borderColour;
 
 	h2 {
 		width: 35%;
@@ -272,7 +272,7 @@ $csIntroWidth			:53%;
 	list-style:none;
 	padding:20px 0;
 	margin:0;
-	border-top: 1px solid $midGray;
+	border-top: 1px solid $borderColour;
 	font-size:1.1rem;
 	letter-spacing:2px;
 
