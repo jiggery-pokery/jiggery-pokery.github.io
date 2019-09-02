@@ -74,7 +74,6 @@ import * as helper from './imports/helpers';
     assetsLoaded: true,
     currentPageType: "",
     currentPathName: "",
-    currentPageIsDark: true,
     isSmallScreen: true,
     homepageLoaded: false,
     lastPageScrollY: 0,
@@ -96,16 +95,6 @@ import * as helper from './imports/helpers';
   ////
   // App functions
   //
-  app.updateMainNavToLight = function(changeNavToLight) {
-    if (changeNavToLight) {
-      app.components.mainHeader.classList.add(app.classes.mainHeaderLightClass);
-      //app.components.mainNavID.classList.add(app.classes.mainNavLightClass);
-    } else {
-      app.components.mainHeader.classList.remove(app.classes.mainHeaderLightClass);
-      //app.components.mainNavID.classList.remove(app.classes.mainNavLightClass);
-    }
-  }
-
   app.saveScrollPosition = function() {
     app.status.lastPageScrollY = window.scrollY;
   }
@@ -128,21 +117,6 @@ import * as helper from './imports/helpers';
     //ga('set', 'page', window.location.pathname);
     //ga('send', 'pageview');
 
-    // TEMP app.updateMainNav();
-    var _newContentData = newContainer.getAttribute("data-pageislight");
-
-    if (_newContentData == 'light') {
-      if (app.status.currentPageIsDark) {
-        app.status.currentPageIsDark = false;
-        app.updateMainNavToLight(true);
-      }
-    } else { // new container is dark
-      if (!app.status.currentPageIsDark) {
-        app.status.currentPageIsDark = true;
-        app.updateMainNavToLight(false);
-      }
-    }
-
     // ToDo: This triggers a repaint, not gd
     if(currentStatus.namespace == "projectList") {
       app.components.mainHeader.classList.add(app.classes.isHomepage);
@@ -162,10 +136,8 @@ import * as helper from './imports/helpers';
       var _this = this;
       var _oldContainer = this.oldContainer;
       var _newContainer = this.newContainer;
-      var _newContentWrapper = _newContainer.querySelector(app.classes.contentWrapperClass);
       var _introSection = _newContainer.querySelector(app.classes.introSection);
       var tl = new TimelineLite();
-      var _toTween;
 
       function completeToDO() {
         _this.done();
@@ -173,40 +145,15 @@ import * as helper from './imports/helpers';
       }
 
       function doGSAP() {
-        
         tl
           .to(_oldContainer, app.timings.Fast, app.settings.transitionOut)
           .call(completeToDO)
-          .from(_toTween, app.timings.Normal, app.settings.transitionIn);
-        /*
-        tl
-          .to(_oldContainer, app.timings.Fast, {
-            x:'-50px',
-            opacity: 0
-          })
-          .call(completeToDO)
-          .from(_toTween, app.timings.Normal, {
-            opacity: 0,
-            x:'100px'
-          });
-          */
+          .from(_introSection, app.timings.Normal, app.settings.transitionIn);
       }
 
-      //app.showLoader();
-
-      if(_introSection == null) {
-        // Meaning it's homepage
-        // we just transit
-        _toTween = _newContainer;
+      imagesLoaded( _introSection, function(instance) {
         doGSAP();
-      } else {
-        // If it's a casestudy
-        // Makes sure the intro__bg.jpg is loaded before transiting
-        imagesLoaded( _introSection, function(instance) {
-          _toTween = _introSection;
-          doGSAP();
-        });
-      }
+      });
     }
   });
 
@@ -404,22 +351,10 @@ import * as helper from './imports/helpers';
       document.documentElement.classList.add(app.classes.isTrident);
     }
 
-    app.settings.transitionOut = app.settings.fadeOut;
-    app.settings.transitionIn = app.settings.fadeIn;
+    // Defaults to slide in/out for mobile and desktop transitions
+    app.settings.transitionOut = app.settings.slideOut;
+    app.settings.transitionIn = app.settings.slideIn;
 
-    if(window.matchMedia) {
-      if(window.matchMedia("only screen and (min-width: 760px)").matches) {
-        app.status.isSmallScreen = false;
-        app.settings.transitionOut = app.settings.slideOut;
-        app.settings.transitionIn = app.settings.slideIn;
-      }
-    }
-
-    //
-    // Store the initial page brightness
-    if(document.querySelector("."+app.classes.barbaContainerClass).getAttribute("data") == app.classes.pageIsLight) {
-      app.status.currentPageIsDark = false;
-    };
   }
 
   app.init();
