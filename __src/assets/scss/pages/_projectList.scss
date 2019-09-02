@@ -157,9 +157,9 @@
 //    opacity: 1;
 //  }
 
-//  @media screen and (max-width: $project1Column) {
-//    opacity: 1;
-//  }  
+  @media screen and (min-width: $bigScreen) {
+    font-size: 3rem;
+  }  
 } // project__title
 
 .project__preview {
