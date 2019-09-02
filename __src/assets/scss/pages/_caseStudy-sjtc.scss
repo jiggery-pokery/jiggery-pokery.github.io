@@ -1,0 +1,35 @@
+/*******
+ * caseStudy.scss
+ *
+ * For SJTC
+ *
+ */
+.project--sjtc {
+	h1 {
+		color: $white; 
+
+		&:after {
+			background-color: $wbsjtcBlue;
+		}
+	}
+
+	.project__title {
+		color: $white;
+
+		&:before,
+	  &:after {
+	    background-color: $wbsjtcBlue;
+	  }
+	}
+	
+	.csAtmosphere {
+		h2:after {
+			background-color: $wbsjtcBlue;
+		}
+	}
+
+	.csIntro {
+	  background-image:url(/assets/img/websites/sjtc/intro__bg.jpg);
+	  background-color:$white;
+	}	
+} // websites--sjtc
