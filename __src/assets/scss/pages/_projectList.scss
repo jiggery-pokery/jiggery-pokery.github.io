@@ -38,22 +38,19 @@
 //    transform: translateY(10px);
 //  }
 
-  animation-duration: $speedNormal, $speedNormal;
-  animation-name: fadeIn--slow, slideInUp--80;
-  animation-fill-mode:backwards, backwards;
-
+  //animation-duration: 500ms, 600ms;
+  //animation-name: fadeIn--slow, slideInUp--80;
+  //animation-fill-mode:backwards, backwards;
+ 
   &:nth-child(odd) {
     clear: left;
   }
 
-  @for $i from 1 through 9 {
-    &:nth-child(#{$i}) {
-//      .is-inserted & {
-//        opacity: 0;
-        animation-delay: 160 + ($speedFast * $i), 140 + ($speedFast * $i);
-//      }
-    }
-  }
+  //@for $i from 1 through 9 {
+  //  &:nth-child(#{$i}) {
+  //      animation-delay: 500 + ($speedFast * $i), 500 + ($speedFast * $i);
+  //  }
+  //}
 
   @media screen and (max-width: $project1Column) {
     width: 100%;
@@ -77,34 +74,45 @@
 }
 
 .project__title {
-  display: inline-block;
   position:relative;
-  font-size: 1.9rem;
+  //z-index: 2;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2.3rem;
 //  opacity: 0;
-  transition: opacity $speedSlow $transitionNormal, transform $speedFast ease-out;
+  transition: opacity $speedSlow $transitionNormal, transform $speedSlow $easeInOutQuint;
   //transition: opacity $speedSlow $transitionNormal;
   transition-delay: $speedSlow, none; // For hover out
 
-
-  &:before {
+  &::before {
     //width: 16px;
     //left: 50%;
-    //margin-left: -8px;
+    //margin-left: -8px; 
     content: " ";
     position: absolute;
-    height: 3px;
-    bottom: -15px;
+    z-index: -1;
+
+    height: 100%; 
+    width:  100%;
+    top: 0;
     left: 0;
-    width: 100%;
-    margin-left: 0;
-    z-index: 3;
+
+    margin-left: -10px;
+    margin-top:  -10px;
+    padding: 10px;
+
     transform: scaleX(0);
-    transition: transform $speedNormal ease-out;
-    //opacity: .5;
+    transition: transform 200ms $easeInOutSine;
+    opacity: .4;
+  }
+
+  &::after {
+    content: ' ';
+    
   }
 
   .project__link:hover & {
-    transform: scale(1.1);
+    transform: scale(1.2);
 
     &:before {
      //opacity: 1;
@@ -116,15 +124,30 @@
   #{$IsTransitingOut}:hover & {
     transform: scale(1.1);
     &:before {
-      //transform-origin: left;
-      //transform: scaleY(2);
-      animation-name: knightRiderScale;
-      animation-duration: 1.5s; /* or: Xms */
+      transform: scaleX(0);
+      //animation-name: knightRiderScale;
+      //animation-duration: 1.5s; /* or: Xms */
+      //animation-iteration-count: infinite;
+      //animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+    }
+
+    &::after {
+      display: block;
+      height: 50px;
+      width: 50px;
+      
+      opacity: .5;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -25px;
+      margin-top: -25px;
+      z-index: -1;
+      animation-name: spin; 
+      animation-duration: 1s;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
       animation-iteration-count: infinite;
-      //animation-direction: alternate; /* or: normal */
-      animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-      //animation-fill-mode: both; /* or: backwards, both, none */
-      //animation-delay: 2s; /* or: Xms */
     }
   }
 
@@ -146,7 +169,7 @@
   //backface-visibility: 0;
   transform: scale(1.05); // Fix the 1 pixel gap
   backface-visibility: hidden;
-  transition: transform $speedSlow $transitionNormal;
+  transition: transform 7s cubic-bezier(0,.6,.45,1);
   //transition-delay: $speedVerySlow;
 
   img {
@@ -160,11 +183,11 @@
 
     //display: none;
     //position:absolute;
-  }
+  } 
 
-//  .project:hover & {
-//    transform:scale(1.15);
-//  }
+  .project:hover & {
+    transform:scale(1.15);
+  }
 
 //  @media screen and (max-width: $project1Column) {
 //    .project:hover & {

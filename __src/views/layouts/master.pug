@@ -25,9 +25,14 @@ html(class='no-js', lang='en')
     block title
       title Audi Liew’s Portfolio
 
+    script.
+      document.documentElement.className="js"
+
     script(src='https://www.google-analytics.com/analytics.js', async)
 
-  body
+  body(
+    class=isHomepage? 'loading' : ''
+  )
 
     header.mainHeader.container(
       role='banner'
@@ -88,9 +93,9 @@ html(class='no-js', lang='en')
             data-namespace=namespace? namespace : 'caseStudyView'
             data-pageIsLight=pageIsLight
           )
-            article.contentWrapper.caseStudy(
+            article.contentWrapper(
               role='main'
-              class=workName? 'project--' + workName : ''
+              class=workName? 'caseStudy project--' + workName : ''
             )
               block content
 

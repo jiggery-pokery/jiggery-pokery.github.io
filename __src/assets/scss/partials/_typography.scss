@@ -7,18 +7,19 @@
  */
 body {
 //	font-family: 'Merriweather Sans', sans-serif;
-	
-	font-family: 'Ubuntu', sans-serif;
+	background-color:$bgcolour;
+	color:$contentTextColour;
+	font-family: 'Catamaran', sans-serif;
 	line-height: 1.6em;
 	font-weight: 300;
 }
 
-h1,h2,h3,h4,h5,h6 {
+//h1,h2,h3,h4,h5,h6 {
 // 	font-family: 'Merriweather', serif;
-	font-family: 'Julius Sans One', sans-serif;
+//	font-family: 'Julius Sans One', sans-serif;
 // 	font-weight: 400;
 // 	letter-spacing: 0.04em;
-}
+//}
 
 a {
  	text-decoration: none;

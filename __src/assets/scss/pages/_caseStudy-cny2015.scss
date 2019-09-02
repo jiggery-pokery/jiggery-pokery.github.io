@@ -6,7 +6,7 @@
  */
 $CNY2015Gray		: #333;
 
-.project--cny2015 {
+.project--cny {
 	h1 {
 		color: $white;
 
@@ -55,10 +55,10 @@ $CNY2015Gray		: #333;
 			}
 		}
 
-	.csProfile,
-	.csScreenshots {
-		background-color: $CNY2015Gray;		
-	}
+	//.csProfile,
+	//.csScreenshots {
+	//	background-color: $CNY2015Gray;		
+	//}
 
 	.colourPalette__primary {
 		background-color:$CNY2015Gray; 

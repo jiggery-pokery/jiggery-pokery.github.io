@@ -11,23 +11,25 @@ $offMidGray									: rgb(23, 23, 23);
 $midGray										: rgb(43, 43, 43);
 $lightGray									: rgb(98, 98, 98);
 $white											: rgb(255,255,255);
+$whiteSmoke									: rgb(245,245,245);
 //$offWhite										: rgb(204, 204, 204);
 $offWhite										: rgb(142, 142, 142);
-$offWhiteLight							: rgb(180, 180, 180);;
-$offWhiteDark								: rgb(216, 216, 216);
+$offWhiteLight							: rgb(180, 180, 180);
+$offWhiteDark								: rgb(216, 216, 216); 
 
 $aqua												: rgb(39, 206, 230);
 $gold												: gold;
 $skyBlue										: rgb(135,206,235);
-
+ 
 $purple900									: #4A148C;
 $purple800									: #6A1B9A;
 $cyanA400										: #00E5FF;
 $cyanA200										: #18FFFF;
 
-$bgcolour										: $darkGray;
-$contentTextColour					: $white;
+$bgcolour										: $whiteSmoke;
+$contentTextColour					: $darkGray;
 $secondaryTextColour				: $lightGray;
+$borderColour               : $offWhiteDark;
 
 $primaryColour							: lighten($skyBlue,5);
 $primaryColourDark					: darken($skyBlue,10);
@@ -35,7 +37,7 @@ $primaryColourLight					: $purple800;
 $accentColour								: $cyanA400;
 $accentColourLight					: $cyanA200;
 
-$logoColour									: $white;
+$logoColour									: $midGray;
 $logoHoverColour						: lighten($skyBlue,5);
 $logoDarkColour							: darken($skyBlue,10);
 
@@ -87,6 +89,8 @@ $IsTrident									: ".is-trident";
 $transitionNormal						: ease-in-out;
 $transitionOut							: ease-in;
 $transitionDistance 				: 10px;
+$easeInOutQuint             : cubic-bezier(0.86, 0, 0.07, 1);
+$easeInOutSine              : cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 // Size does not matter
 $tooLowForHero							: 430px;
