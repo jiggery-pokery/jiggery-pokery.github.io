@@ -76,10 +76,10 @@ module.exports = (env, argv) => {
         filename: 'assets/css/[name].css'
       }),
       new CopyWebpackPlugin([
-        {
-          context: '__src',
-          from: 'assets/img/**/*'
-        },
+        //{
+        //  context: '__src',
+        //  from: 'assets/img/**/*'
+        //},
         {
           from: '__src/assets/js/plugins.js',
           to: 'assets/js/plugins.js'
@@ -92,7 +92,7 @@ module.exports = (env, argv) => {
       }),
       ...utils.pages(env),
       ...utils.pages(env, 'works'),
-      new ImageminPlugin({
+      /* new ImageminPlugin({
         test: /\.(jpe?g|png|gif|svg)$/i,
         optipng: null,
         pngquant: {
@@ -108,7 +108,7 @@ module.exports = (env, argv) => {
             progressive: true
           })
         ]
-      })
+      }) */
     ],
     optimization: {
       minimizer: [
