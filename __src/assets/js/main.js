@@ -121,9 +121,11 @@ import * as helper from './imports/helpers';
     }
   });
 
-  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, newContainer) {
-    //ga('set', 'page', window.location.pathname);
-    //ga('send', 'pageview');
+  Barba.Dispatcher.on('transitionCompleted', function(currentStatus, oldStatus, newContainer) {
+    if(window.ga && ga.loaded) {
+      ga('set', 'page', window.location.pathname);
+      ga('send', 'pageview');
+    }
   });
   
   app.components.transitToCaseStudy = Barba.BaseTransition.extend({
