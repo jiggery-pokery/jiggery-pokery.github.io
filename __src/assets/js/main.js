@@ -40,7 +40,7 @@ import * as helper from './imports/helpers';
     slideIn:{x:'100px',opacity: 0},
     fadeOut:{opacity: 0},
     fadeIn:{opacity: 0},
-    transitionOut:'',
+    transitionOut:'', // Sets on init
     transitionIn:''
   }
 
@@ -150,63 +150,6 @@ import * as helper from './imports/helpers';
       app.components.mainHeader.classList.remove(app.classes.isHomepage);
     }
   });
-
-  //Barba.Dispatcher.on('transitionCompleted', function(currentStatus, oldStatus) {
-    //console.log("transitionCompleted", window.location.pathname);
-    /* if (window.location.pathname != "/") {
-      var bLazy = new Blazy({
-        selector:".lazy",
-        loadInvisible:true,
-        offset:200, 
-        successClass:"lazyLoaded"
-      });
-    } */
-  //});
-
-  /*
-  app.components.barbaFadeTransition = Barba.BaseTransition.extend({
-    start: function() { 
-      Promise
-        .all([this.newContainerLoading, this.fadeOutOld()])
-        .then(this.fadeInNew.bind(this));
-    },
-
-    fadeOutOld: function() {
-      var deferred = Barba.Utils.deferred();
-      
-      TweenLite.to(this.oldContainer, .2, {
-        opacity: 0,
-        onComplete: function() {
-          deferred.resolve();
-        }
-      });
-        
-      return deferred.promise;
-    },
-
-    fadeInNew: function() {
-      var _this = this;
-      var _newContainer = this.newContainer;
-      var _newContentWrapper = _newContainer.querySelector(app.classes.contentWrapperClass);
-      //var _newContentData = _newContainer.getAttribute("data-pageislight");
-      var _introSection = _newContainer.querySelector(app.classes.introSection);
-      var _toTween;
-
-      TweenLite.set(window,{scrollTo:0});
-      if(_introSection != null) {
-        _toTween = _introSection;
-      } else {
-        _toTween = _newContainer;        
-      }
-
-      TweenLite.to(_toTween, app.timings.Normal, {
-        opacity: 1
-      });
-
-      _this.done();
-    }
-  });
-  */
   
   app.components.transitToCaseStudy = Barba.BaseTransition.extend({
     start: function() {
@@ -313,6 +256,7 @@ import * as helper from './imports/helpers';
     return transitionObj;
   };
 
+  // Home page
   var projectListView = Barba.BaseView.extend({
     namespace: 'projectList',
     bLazy:'',
@@ -345,7 +289,6 @@ import * as helper from './imports/helpers';
       var tl = new TimelineLite({
         paused: true,
         onComplete: function() {
-          console.log('done');
           TweenLite.set(projs, {clearProps: 'all'});
         }
        });
@@ -361,17 +304,11 @@ import * as helper from './imports/helpers';
         tl.play();
       });
      }
-
-     //this.bLazy = new Blazy({
-     //  selector:".lazy",
-     //  loadInvisible:true,
-     //  successClass:"lazyLoaded"
-     //});
     },
-    onLeave:function() {
+    //onLeave:function() {
       // Destroy the bLazy listeners
       //this.bLazy.destroy();
-    }
+    //}
   });
 
   var caseStudyView = Barba.BaseView.extend({
