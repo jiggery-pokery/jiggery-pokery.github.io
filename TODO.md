@@ -9,7 +9,7 @@
 - [x] Increase size of Home button
 
 ## Mid Priority
-- [ ] Fix back button showing before page
+- [x] Fix back button showing before page
 
 ## Low Priority
 - [ ] Slow down page transition by abit

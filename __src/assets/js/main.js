@@ -99,6 +99,14 @@ import * as helper from './imports/helpers';
     app.status.lastPageScrollY = window.scrollY;
   }
 
+  app.setIsHomepage = function(isHomepage = true) {
+    if (isHomepage) {
+      app.components.mainHeader.classList.add(app.classes.isHomepage);
+    } else {
+      app.components.mainHeader.classList.remove(app.classes.isHomepage);
+    }
+  }
+
   ////
   // Barba settings
   //
@@ -116,13 +124,6 @@ import * as helper from './imports/helpers';
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, newContainer) {
     //ga('set', 'page', window.location.pathname);
     //ga('send', 'pageview');
-
-    // ToDo: This triggers a repaint, not gd
-    if(currentStatus.namespace == "projectList") {
-      app.components.mainHeader.classList.add(app.classes.isHomepage);
-    } else {
-      app.components.mainHeader.classList.remove(app.classes.isHomepage);
-    }
   });
   
   app.components.transitToCaseStudy = Barba.BaseTransition.extend({
@@ -142,6 +143,7 @@ import * as helper from './imports/helpers';
       function completeToDO() {
         _this.done();
         TweenLite.set(window,{scrollTo:0});
+        app.setIsHomepage(false);
       }
 
       function doGSAP() {
@@ -173,6 +175,7 @@ import * as helper from './imports/helpers';
       function completeToDO() {
         _this.done();
         TweenLite.set(window,{scrollTo:app.status.lastPageScrollY});
+        app.setIsHomepage();
       }
 
       function doGSAP() {
