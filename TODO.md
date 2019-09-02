@@ -2,8 +2,8 @@
 
 ## High Priority
 - [ ] Highres Hero images
-- [ ] Add SJTC
 - [ ] Add video assets
+- [x] Add SJTC
 - [x] Add JS
 - [x] Add DR’s Secret story
 - [x] Increase size of Home button
