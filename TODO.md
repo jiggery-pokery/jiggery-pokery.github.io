@@ -1,11 +1,12 @@
 # To Do List
 
 ## High Priority
+- [ ] Highres Hero images
+- [ ] Add SJTC
 - [ ] Add video assets
 - [x] Add JS
-- [ ] Add SJTC
-- [ ] Add DR’s Secret story
-- [ ] Increase size of Home button
+- [x] Add DR’s Secret story
+- [x] Increase size of Home button
 
 ## Mid Priority
 
