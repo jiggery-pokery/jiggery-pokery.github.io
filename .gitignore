@@ -4,6 +4,6 @@ distribution
 .cache
 
 # UNHIDE BELOW BEFORE GOING LIVE!!
-/assets
-/works
-/index.html
+#/assets
+#/works
+#/index.html
