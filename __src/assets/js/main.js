@@ -383,7 +383,7 @@ import * as helper from './imports/helpers';
       this.bLazy = new Blazy({
         selector:".lazy",
         loadInvisible:true,
-        offset:200, 
+        offset:420, 
         successClass:"lazyLoaded"
       });
 
