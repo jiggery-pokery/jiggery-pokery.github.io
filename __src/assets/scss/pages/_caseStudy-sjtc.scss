@@ -1,0 +1,68 @@
+/*******
+ * caseStudy.scss
+ *
+ * For SJTC
+ *
+ */
+.project--sjtc {
+	h1 {
+		&:after {
+			background-color: $wbBestWorldBlue;
+		}
+	}
+
+	.project__title {
+		&:before,
+	  &:after {
+	    background-color: $wbBestWorldBlue;
+	  }
+	}
+	
+	.csAtmosphere {
+		h2:after {
+			background-color: $wbBestWorldBlue;
+		}
+	}
+
+	.csIntro {
+	  background-image:url(/assets/img/websites/sjtc/intro__bg.jpg);
+	  background-color:$white;
+	}
+
+	.csIntro__imgwrap {
+		position: absolute;
+    width: 100%;
+    //background-color: rgb(255, 215, 0);
+    height: 100%;
+    top: 0;
+    left: 0;
+	}
+
+	//.csProfile,
+	//.csScreenshots {
+	//	background-color: $wbBestWorldBg;		
+	//}
+
+	.colourPalette__primary {
+		background-color:rgb(0, 104, 154);
+	}
+	.colourPalette__primary2 {
+		background-color:rgb(51, 153, 204);
+	}
+	.colourPalette__primary3 {
+		background-color:rgb(78, 140, 170);
+	}
+	.colourPalette__secondary {
+		background-color:rgb(193, 216, 47);
+	}
+	.colourPalette__secondary2 {
+		background-color:rgb(216, 229, 136);
+	}
+	.colourPalette__neutral {
+		background-color:rgb(195, 195, 195);
+	}
+	.colourPalette__neutral2 {
+		background-color:rgb(229, 229, 229);
+	}
+	
+} // websites--sjtc
