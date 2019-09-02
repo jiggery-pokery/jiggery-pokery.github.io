@@ -12,7 +12,7 @@
 
 ## Low Priority
 - [ ] Slow down page transition by abit
-- [ ] Remember Home scroll position after coming back
+- [x] Remember Home scroll position after coming back
 
 ---
 
