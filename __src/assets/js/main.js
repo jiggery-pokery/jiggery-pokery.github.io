@@ -77,6 +77,7 @@ import * as helper from './imports/helpers';
     currentPageIsDark: true,
     isSmallScreen: true,
     homepageLoaded: false,
+    lastPageScrollY: 0,
   }
 
   ////
@@ -103,6 +104,10 @@ import * as helper from './imports/helpers';
       app.components.mainHeader.classList.remove(app.classes.mainHeaderLightClass);
       //app.components.mainNavID.classList.remove(app.classes.mainNavLightClass);
     }
+  }
+
+  app.saveScrollPosition = function() {
+    app.status.lastPageScrollY = window.scrollY;
   }
 
   ////
@@ -277,7 +282,7 @@ import * as helper from './imports/helpers';
 
       function completeToDO() {
         _this.done();
-        TweenLite.set(window,{scrollTo:0});
+        TweenLite.set(window,{scrollTo:app.status.lastPageScrollY});
       }
 
       function doGSAP() {
@@ -301,6 +306,8 @@ import * as helper from './imports/helpers';
     } else {
       // Home to case study
       transitionObj = app.components.transitToCaseStudy;
+
+      app.saveScrollPosition();
     }
 
     return transitionObj;
