@@ -22,7 +22,13 @@ html(class='no-js', lang='en')
     script.
       document.documentElement.className="js"
 
-    script(src='https://www.google-analytics.com/analytics.js', async)
+    script(src='https://www.googletagmanager.com/gtag/js?id=UA-152815698-1', async)
+
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-152815698-1');
 
   body(
     class=isHomepage? 'loading' : ''
